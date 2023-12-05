@@ -1,0 +1,16 @@
+[
+    {
+        "pharmacy": 123,
+        "statue": "bending",
+        "paid": false,
+        "med": {
+            "sc_name": [
+                "setamol"
+            ],
+            "qty": [
+                25
+            ]
+        },
+        "total_price": 0
+    }
+]
