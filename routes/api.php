@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pharmacy;
-
+use App\Http\Controllers\repo;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,10 +25,13 @@ Route::get('/categories' , [Pharmacy::class ,'getCategories']);
 Route::get('/medicines/{category}' , [Pharmacy::class ,'getMedicinesByCategory']);
 Route::get('/searchByCategory/{category}' , [Pharmacy::class , 'searchByCategory']); 
 Route::get('/searchMedicine/{searchTerm}' , [Pharmacy::class , 'searchMedicine']); 
-// Route::post('/Add_order' , [Pharmacy::class , 'order']); // Query string and Request Body are required
-//Route::get('/show_orders' , [Pharmacy::class , 'show_orders']); // Query string is required Query string is required
+//Route::post('/addOrder' , [Pharmacy::class , 'addOrder']);
+//Route::get('/orders' , [Pharmacy::class , 'orders']); 
+//Route::post('/addCart' , [Pharmacy::class , 'addCart']);
+//Route::get('/cart' , [Pharmacy::class , 'cart']);
+
 // Route Warehouse Owner
-// Route::get('/Login' , [WarehouseOwner::class , 'Login']);
-// Route::post('/Add' , [WarehouseOwner::class , 'add_product']); // Request Body is required // Query string is required // query string is required
-// Route::post('/orders' , [WarehouseOwner::class , 'orderes_show']);
-// Route::post('/order_modify' , [WarehouseOwner::class , 'ordermodify']); // Query string and Request Body are required
+Route::post('/loginAdmin' , [repo::class , 'loginAdmin']);
+Route::post('/registerAdmin' , [repo::class , 'registerAdmin']); 
+//Route::post('/order_modify' , [repo::class , 'ordermodify']);
+//Route::post('/addMedicine' , [repo::class , 'addMedicine']); 
