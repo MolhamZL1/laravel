@@ -28,8 +28,8 @@ Route::get('/searchByCategory/{category}' , [Pharmacy::class , 'searchByCategory
 Route::get('/searchMedicine/{searchTerm}' , [Pharmacy::class , 'searchMedicine']); 
 Route::post('/addToCart' , [Pharmacy::class , 'addToCart']);//id,quantity,token
 Route::get('/cart/{token}' , [Pharmacy::class , 'getCart']);
-//Route::post('/addOrder' , [Pharmacy::class , 'addOrder']);
-//Route::get('/orders' , [Pharmacy::class , 'orders']); 
+Route::post('/addorder' , [Pharmacy::class , 'order']);
+Route::get('/orders' , [Pharmacy::class , 'getOrders']); 
 
 // Route repos Owner
 Route::post('/loginAdmin' , [repo::class , 'loginAdmin']);

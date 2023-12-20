@@ -154,8 +154,8 @@ class Pharmacy extends Controller
             if (isset($item['token']) && $item['token'] === $token) {
 
     $jsonFile = 'C:\xampp\htdocs\laravel\jsons\Medicines.json';
-    $jsonContent = file_get_contents($jsonFile);
-    $medicinesData = json_decode($jsonContent, true);
+    $Content = file_get_contents($jsonFile);
+    $medicinesData = json_decode($Content, true);
 
     $medicineId = $request->input('id');
     $quantity = $request->input('quantity');
@@ -203,12 +203,60 @@ class Pharmacy extends Controller
 }}
 return response()->json(['error' => 'التسجيل مطلوب']);
 }
-public function getCart($token)
+public function getCart(Request $token)
 {
     $filepath = 'C:\xampp\htdocs\laravel\jsons\Cart.json'; 
     $filecontent = file_get_contents($filepath);
     $jsoncontent = json_decode($filecontent, true);
     $medicines = $jsoncontent['carts'][$token] ?? [];
     return response()->json( $medicines);
+}
+public function order(Request $request)
+{
+    $jsonFilePath = 'C:\xampp\htdocs\laravel\jsons\Cart.json';
+    $orderFilePath = 'C:\xampp\htdocs\laravel\jsons\Orders.json';
+
+    $cartData = json_decode(file_get_contents($jsonFilePath), true);
+
+    $token = $request->input('token');
+    $username = $request->input('username');
+
+    if (isset($cartData['carts'][$token])) {
+        $medicines = $cartData['carts'][$token];
+        $totalQuantity = 0;
+        $totalPrice = 0;
+
+        foreach ($medicines as $medicine) {
+            $totalQuantity += $medicine['quantity'];
+            $totalPrice += $medicine['price'];
+        }
+
+        $orderItem = [
+            'ordernumber' => uniqid(),
+            'username' => $username,
+            'status' => 'pending',
+            'total_price' => $totalPrice,
+            'total_quantity' => $totalQuantity,
+            'paid' => false,
+            'medicines' => $medicines,
+        ];
+
+        $ordersData = json_decode(file_get_contents($orderFilePath), true);
+        $ordersData['orders'][$token][] = $orderItem;
+
+        file_put_contents($orderFilePath, json_encode($ordersData, JSON_PRETTY_PRINT));
+
+        return response()->json(['message' => 'تمت إضافة الطلب بنجاح']);
+    } else {
+        return response()->json(['error' => 'التسجيل مطلوب']);
+    }
+}
+public function getOrders(Request $token)
+{
+    $filepath = 'C:\xampp\htdocs\laravel\jsons\Orders.json'; 
+    $filecontent = file_get_contents($filepath);
+    $jsoncontent = json_decode($filecontent, true);
+    $orders = $jsoncontent[$token]['orders'] ?? [];
+    return response()->json( $orders);
 }
 }
