@@ -2,6 +2,8 @@
     "categories": {
         "Analgesic": [
             {
+                "id": "1",
+                "category": "Analgesic",
                 "scientific_name": "Paracetamol",
                 "trade_name": "Panadol",
                 "manufacturer": "ABC Pharmaceuticals",
@@ -10,6 +12,8 @@
                 "price": 5.99
             },
             {
+                "id": "2",
+                "category": "Analgesic",
                 "scientific_name": "Ibuprofen",
                 "trade_name": "Advil",
                 "manufacturer": "XYZ Pharmaceuticals",
@@ -18,6 +22,8 @@
                 "price": 7.99
             },
             {
+                "id": "3",
+                "category": "Analgesic",
                 "scientific_name": "Acetaminophen",
                 "trade_name": "Tylenol",
                 "manufacturer": "MediPharma",
@@ -26,6 +32,8 @@
                 "price": 6.49
             },
             {
+                "id": "4",
+                "category": "Analgesic",
                 "scientific_name": "Aspirin",
                 "trade_name": "Bayer Aspirin",
                 "manufacturer": "PharmaCorp",
@@ -34,6 +42,8 @@
                 "price": 4.99
             },
             {
+                "id": "5",
+                "category": "Analgesic",
                 "scientific_name": "Naproxen",
                 "trade_name": "Aleve",
                 "manufacturer": "MediTech",
@@ -42,6 +52,8 @@
                 "price": 9.99
             },
             {
+                "id": "6",
+                "category": "Analgesic",
                 "scientific_name": "Diclofenac",
                 "trade_name": "Voltaren",
                 "manufacturer": "Global Pharma",
@@ -50,6 +62,8 @@
                 "price": 8.79
             },
             {
+                "id": "7",
+                "category": "Analgesic",
                 "scientific_name": "Morphine",
                 "trade_name": "MS Contin",
                 "manufacturer": "Pain Relief Inc.",
@@ -58,6 +72,8 @@
                 "price": 15.99
             },
             {
+                "id": "8",
+                "category": "Analgesic",
                 "scientific_name": "Codeine",
                 "trade_name": "Robitussin AC",
                 "manufacturer": "Cough Care",
@@ -66,6 +82,8 @@
                 "price": 12.99
             },
             {
+                "id": "9",
+                "category": "Analgesic",
                 "scientific_name": "Tramadol",
                 "trade_name": "Ultram",
                 "manufacturer": "Relief Pharmaceuticals",
@@ -74,6 +92,8 @@
                 "price": 11.49
             },
             {
+                "id": "10",
+                "category": "Analgesic",
                 "scientific_name": "Hydrocodone",
                 "trade_name": "Vicodin",
                 "manufacturer": "Pain Solutions",
@@ -82,6 +102,8 @@
                 "price": 18.99
             },
             {
+                "id": "6582c559aaf21",
+                "category": "Analgesic",
                 "scientific_name": "Paracetamol",
                 "trade_name": "molham",
                 "manufacturer": "ABC Pharmaceuticals",
@@ -92,6 +114,8 @@
         ],
         "Anti-inflammatory": [
             {
+                "id": "11",
+                "category": "Anti-inflammatory",
                 "scientific_name": "Prednisone",
                 "trade_name": "Deltasone",
                 "manufacturer": "MediCure",
@@ -100,6 +124,8 @@
                 "price": 14.49
             },
             {
+                "id": "12",
+                "category": "Anti-inflammatory",
                 "scientific_name": "Celecoxib",
                 "trade_name": "Celebrex",
                 "manufacturer": "Relief Pharmaceuticals",
@@ -108,6 +134,8 @@
                 "price": 16.99
             },
             {
+                "id": "13",
+                "category": "Anti-inflammatory",
                 "scientific_name": "Indomethacin",
                 "trade_name": "Indocin",
                 "manufacturer": "Pharma Solutions",
@@ -116,6 +144,8 @@
                 "price": 13.29
             },
             {
+                "id": "14",
+                "category": "Anti-inflammatory",
                 "scientific_name": "Methylprednisolone",
                 "trade_name": "Medrol",
                 "manufacturer": "Wellness Pharma",
@@ -124,6 +154,8 @@
                 "price": 15.79
             },
             {
+                "id": "15",
+                "category": "Anti-inflammatory",
                 "scientific_name": "Etodolac",
                 "trade_name": "Lodine",
                 "manufacturer": "Care Pharmaceuticals",
@@ -132,6 +164,8 @@
                 "price": 11.99
             },
             {
+                "id": "16",
+                "category": "Anti-inflammatory",
                 "scientific_name": "Nabumetone",
                 "trade_name": "Relafen",
                 "manufacturer": "Pain Relief Inc.",
@@ -140,6 +174,8 @@
                 "price": 12.99
             },
             {
+                "id": "17",
+                "category": "Anti-inflammatory",
                 "scientific_name": "Diflunisal",
                 "trade_name": "Dolobid",
                 "manufacturer": "Cure Pharma",
@@ -148,6 +184,8 @@
                 "price": 10.59
             },
             {
+                "id": "18",
+                "category": "Anti-inflammatory",
                 "scientific_name": "Sulindac",
                 "trade_name": "Clinoril",
                 "manufacturer": "Health Solutions",
@@ -156,6 +194,8 @@
                 "price": 14.99
             },
             {
+                "id": "19",
+                "category": "Anti-inflammatory",
                 "scientific_name": "Ketoprofen",
                 "trade_name": "Orudis",
                 "manufacturer": "MediTech",
@@ -164,6 +204,8 @@
                 "price": 13.79
             },
             {
+                "id": "20",
+                "category": "Anti-inflammatory",
                 "scientific_name": "Piroxicam",
                 "trade_name": "Feldene",
                 "manufacturer": "Pain Solutions",
@@ -174,6 +216,8 @@
         ],
         "Antibiotic": [
             {
+                "id": "21",
+                "category": "Antibiotic",
                 "scientific_name": "Amoxicillin",
                 "trade_name": "Amoxil",
                 "manufacturer": "MediPharma",
@@ -182,6 +226,8 @@
                 "price": 8.99
             },
             {
+                "id": "22",
+                "category": "Antibiotic",
                 "scientific_name": "Ciprofloxacin",
                 "trade_name": "Cipro",
                 "manufacturer": "Pharma Solutions",
@@ -190,6 +236,8 @@
                 "price": 10.49
             },
             {
+                "id": "23",
+                "category": "Antibiotic",
                 "scientific_name": "Azithromycin",
                 "trade_name": "Zithromax",
                 "manufacturer": "Health Solutions",
@@ -198,6 +246,8 @@
                 "price": 12.99
             },
             {
+                "id": "24",
+                "category": "Antibiotic",
                 "scientific_name": "Doxycycline",
                 "trade_name": "Vibramycin",
                 "manufacturer": "Care Pharmaceuticals",
@@ -206,6 +256,8 @@
                 "price": 11.79
             },
             {
+                "id": "25",
+                "category": "Antibiotic",
                 "scientific_name": "Cephalexin",
                 "trade_name": "Keflex",
                 "manufacturer": "Wellness Pharma",
@@ -214,6 +266,8 @@
                 "price": 9.89
             },
             {
+                "id": "26",
+                "category": "Antibiotic",
                 "scientific_name": "Levofloxacin",
                 "trade_name": "Levaquin",
                 "manufacturer": "Pain Relief Inc.",
@@ -222,6 +276,8 @@
                 "price": 13.99
             },
             {
+                "id": "27",
+                "category": "Antibiotic",
                 "scientific_name": "Metronidazole",
                 "trade_name": "Flagyl",
                 "manufacturer": "Relief Pharmaceuticals",
@@ -230,6 +286,8 @@
                 "price": 10.99
             },
             {
+                "id": "28",
+                "category": "Antibiotic",
                 "scientific_name": "Clarithromycin",
                 "trade_name": "Biaxin",
                 "manufacturer": "Cure Pharma",
@@ -238,6 +296,8 @@
                 "price": 14.29
             },
             {
+                "id": "29",
+                "category": "Antibiotic",
                 "scientific_name": "Trimethoprim-sulfamethoxazole",
                 "trade_name": "Bactrim",
                 "manufacturer": "MediTech",
@@ -246,6 +306,8 @@
                 "price": 11.49
             },
             {
+                "id": "30",
+                "category": "Antibiotic",
                 "scientific_name": "Clindamycin",
                 "trade_name": "Cleocin",
                 "manufacturer": "Pain Solutions",
@@ -256,6 +318,8 @@
         ],
         "Antipyretic": [
             {
+                "id": "31",
+                "category": "Antipyretic",
                 "scientific_name": "Acetaminophen",
                 "trade_name": "Tylenol",
                 "manufacturer": "MediPharma",
@@ -264,6 +328,8 @@
                 "price": 6.49
             },
             {
+                "id": "32",
+                "category": "Antipyretic",
                 "scientific_name": "Ibuprofen",
                 "trade_name": "Advil",
                 "manufacturer": "XYZ Pharmaceuticals",
@@ -272,6 +338,8 @@
                 "price": 7.99
             },
             {
+                "id": "33",
+                "category": "Antipyretic",
                 "scientific_name": "Aspirin",
                 "trade_name": "Bayer Aspirin",
                 "manufacturer": "PharmaCorp",
@@ -280,6 +348,8 @@
                 "price": 4.99
             },
             {
+                "id": "34",
+                "category": "Antipyretic",
                 "scientific_name": "Naproxen",
                 "trade_name": "Aleve",
                 "manufacturer": "MediTech",
@@ -288,6 +358,8 @@
                 "price": 9.99
             },
             {
+                "id": "35",
+                "category": "Antipyretic",
                 "scientific_name": "Paracetamol",
                 "trade_name": "Panadol",
                 "manufacturer": "ABC Pharmaceuticals",
@@ -296,6 +368,8 @@
                 "price": 5.99
             },
             {
+                "id": "36",
+                "category": "Antipyretic",
                 "scientific_name": "Dipyrone",
                 "trade_name": "Novalgin",
                 "manufacturer": "Health Solutions",
@@ -304,6 +378,8 @@
                 "price": 8.49
             },
             {
+                "id": "37",
+                "category": "Antipyretic",
                 "scientific_name": "Etoricoxib",
                 "trade_name": "Arcoxia",
                 "manufacturer": "Wellness Pharma",
@@ -312,6 +388,8 @@
                 "price": 11.99
             },
             {
+                "id": "38",
+                "category": "Antipyretic",
                 "scientific_name": "Indomethacin",
                 "trade_name": "Indocin",
                 "manufacturer": "Pharma Solutions",
@@ -320,6 +398,8 @@
                 "price": 10.99
             },
             {
+                "id": "39",
+                "category": "Antipyretic",
                 "scientific_name": "Celecoxib",
                 "trade_name": "Celebrex",
                 "manufacturer": "Relief Pharmaceuticals",
@@ -328,6 +408,8 @@
                 "price": 16.99
             },
             {
+                "id": "40",
+                "category": "Antipyretic",
                 "scientific_name": "Diclofenac",
                 "trade_name": "Voltaren",
                 "manufacturer": "Global Pharma",
@@ -338,6 +420,8 @@
         ],
         "Antihistamine": [
             {
+                "id": "41",
+                "category": "Antihistamine",
                 "scientific_name": "Cetirizine",
                 "trade_name": "Zyrtec",
                 "manufacturer": "MediPharma",
@@ -346,6 +430,8 @@
                 "price": 8.99
             },
             {
+                "id": "42",
+                "category": "Antihistamine",
                 "scientific_name": "Loratadine",
                 "trade_name": "Claritin",
                 "manufacturer": "Pharma Solutions",
@@ -354,6 +440,8 @@
                 "price": 10.49
             },
             {
+                "id": "43",
+                "category": "Antihistamine",
                 "scientific_name": "Diphenhydramine",
                 "trade_name": "Benadryl",
                 "manufacturer": "Health Solutions",
@@ -362,6 +450,8 @@
                 "price": 12.99
             },
             {
+                "id": "44",
+                "category": "Antihistamine",
                 "scientific_name": "Fexofenadine",
                 "trade_name": "Allegra",
                 "manufacturer": "Care Pharmaceuticals",
@@ -370,6 +460,8 @@
                 "price": 11.79
             },
             {
+                "id": "45",
+                "category": "Antihistamine",
                 "scientific_name": "Desloratadine",
                 "trade_name": "Clarinex",
                 "manufacturer": "Wellness Pharma",
@@ -378,6 +470,8 @@
                 "price": 9.89
             },
             {
+                "id": "46",
+                "category": "Antihistamine",
                 "scientific_name": "Hydroxyzine",
                 "trade_name": "Atarax",
                 "manufacturer": "Pain Relief Inc.",
@@ -386,6 +480,8 @@
                 "price": 13.99
             },
             {
+                "id": "47",
+                "category": "Antihistamine",
                 "scientific_name": "Levocetirizine",
                 "trade_name": "Xyzal",
                 "manufacturer": "Relief Pharmaceuticals",
@@ -394,6 +490,8 @@
                 "price": 10.99
             },
             {
+                "id": "48",
+                "category": "Antihistamine",
                 "scientific_name": "Azelastine",
                 "trade_name": "Astelin",
                 "manufacturer": "Cure Pharma",
@@ -402,6 +500,8 @@
                 "price": 14.29
             },
             {
+                "id": "49",
+                "category": "Antihistamine",
                 "scientific_name": "Ebastine",
                 "trade_name": "Kestine",
                 "manufacturer": "MediTech",
@@ -410,6 +510,8 @@
                 "price": 11.49
             },
             {
+                "id": "50",
+                "category": "Antihistamine",
                 "scientific_name": "Olopatadine",
                 "trade_name": "Patanol",
                 "manufacturer": "Pain Solutions",

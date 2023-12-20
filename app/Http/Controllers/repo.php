@@ -84,7 +84,8 @@ class repo extends Controller
         ], 401);    
         
     }
-}public function addMedicine(Request $request)
+}
+public function addMedicine(Request $request)
 {
     $filepath = 'C:\xampp\htdocs\laravel\jsons\Admins.json';
     $filecontent = file_get_contents($filepath);
@@ -103,6 +104,8 @@ class repo extends Controller
             if (isset($medicinesData['categories'][$category])) {
                 // إضافة دواء جديد
                 $newMedicine = [
+                    'id' => uniqid(),
+                    'category'=> $request->input('category'),
                     'scientific_name' => $request->input('scientific_name'),
                     'trade_name' => $request->input('trade_name'),
                     'manufacturer' => $request->input('manufacturer'),
