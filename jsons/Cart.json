@@ -1,38 +1,5 @@
 {
     "carts": {
-        "Ic9asVS7Y47iNVUn6ERh9RIQJZHXKWDx7zcH1jIUHbeLcL6lY2L320CI66tF": [
-            {
-                "id": "2",
-                "category": "Analgesic",
-                "scientific_name": "Ibuprofen",
-                "trade_name": "Advil",
-                "quantity": "2",
-                "price": 7.99
-            },
-            {
-                "id": "3",
-                "category": "Analgesic",
-                "scientific_name": "Acetaminophen",
-                "trade_name": "Tylenol",
-                "quantity": "2",
-                "price": 6.49
-            },
-            {
-                "id": "3",
-                "category": "Analgesic",
-                "scientific_name": "Acetaminophen",
-                "trade_name": "Tylenol",
-                "quantity": "2",
-                "price": 6.49
-            },
-            {
-                "id": "3",
-                "category": "Analgesic",
-                "scientific_name": "Acetaminophen",
-                "trade_name": "Tylenol",
-                "quantity": "2",
-                "price": 6.49
-            }
-        ]
+       
     }
 }

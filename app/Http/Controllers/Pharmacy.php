@@ -112,7 +112,7 @@ class Pharmacy extends Controller
          if (isset($jsoncontent['categories'][$category])) {
              return response()->json( [$category]);
          } else {
-             return response()->json([]);
+             return response()->json();
          }
      }
      public function searchMedicine($query)
@@ -177,7 +177,9 @@ class Pharmacy extends Controller
                     'scientific_name' => $medicine['scientific_name'],
                     'trade_name' => $medicine['trade_name'],
                     'quantity' => $quantity,
+                    "manufacturer"=> $medicine['manufacturer'],
                     'price' => $medicine['price'],
+                    "expiry_date"=> $medicine["expiry_date"],
                 ];
                 $cartpath = 'C:\xampp\htdocs\laravel\jsons\Cart.json';
         $cartcontent = file_get_contents($cartpath);
@@ -208,8 +210,8 @@ public function getCart(Request $token)
     $filepath = 'C:\xampp\htdocs\laravel\jsons\Cart.json'; 
     $filecontent = file_get_contents($filepath);
     $jsoncontent = json_decode($filecontent, true);
-    $medicines = $jsoncontent['carts'][$token] ?? [];
-    return response()->json( $medicines);
+    $medicines = $jsoncontent['carts']["Ic9asVS7Y47iNVUn6ERh9RIQJZHXKWDx7zcH1jIUHbeLcL6lY2L320CI66tF"] ?? [];
+    return response()->json($medicines);
 }
 public function order(Request $request)
 {
