@@ -34,4 +34,4 @@ Route::get('/searchMedicine/{searchTerm}' , [Pharmacy::class , 'searchMedicine']
 Route::post('/loginAdmin' , [repo::class , 'loginAdmin']);
 Route::post('/registerAdmin' , [repo::class , 'registerAdmin']); 
 //Route::post('/order_modify' , [repo::class , 'ordermodify']);
-//Route::post('/addMedicine' , [repo::class , 'addMedicine']); 
+Route::post('/addMedicine' , [repo::class , 'addMedicine']); 

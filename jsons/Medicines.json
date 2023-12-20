@@ -1,65 +1,423 @@
 {
     "categories": {
-      "Analgesic": [
-        {"scientific_name": "Paracetamol", "trade_name": "Panadol", "manufacturer": "ABC Pharmaceuticals", "quantity_available": 100, "expiry_date": "2023-12-31", "price": 5.99},
-        {"scientific_name": "Ibuprofen", "trade_name": "Advil", "manufacturer": "XYZ Pharmaceuticals", "quantity_available": 50, "expiry_date": "2023-11-30", "price": 7.99},
-        {"scientific_name": "Acetaminophen", "trade_name": "Tylenol", "manufacturer": "MediPharma", "quantity_available": 70, "expiry_date": "2024-01-15", "price": 6.49},
-        {"scientific_name": "Aspirin", "trade_name": "Bayer Aspirin", "manufacturer": "PharmaCorp", "quantity_available": 90, "expiry_date": "2023-12-15", "price": 4.99},
-        {"scientific_name": "Naproxen", "trade_name": "Aleve", "manufacturer": "MediTech", "quantity_available": 60, "expiry_date": "2023-10-31", "price": 9.99},
-        {"scientific_name": "Diclofenac", "trade_name": "Voltaren", "manufacturer": "Global Pharma", "quantity_available": 40, "expiry_date": "2024-03-20", "price": 8.79},
-        {"scientific_name": "Morphine", "trade_name": "MS Contin", "manufacturer": "Pain Relief Inc.", "quantity_available": 30, "expiry_date": "2024-05-05", "price": 15.99},
-        {"scientific_name": "Codeine", "trade_name": "Robitussin AC", "manufacturer": "Cough Care", "quantity_available": 25, "expiry_date": "2024-02-28", "price": 12.99},
-        {"scientific_name": "Tramadol", "trade_name": "Ultram", "manufacturer": "Relief Pharmaceuticals", "quantity_available": 55, "expiry_date": "2024-04-10", "price": 11.49},
-        {"scientific_name": "Hydrocodone", "trade_name": "Vicodin", "manufacturer": "Pain Solutions", "quantity_available": 35, "expiry_date": "2024-06-15", "price": 18.99}
-      ],
-      "Anti-inflammatory": [
-        {"scientific_name": "Prednisone", "trade_name": "Deltasone", "manufacturer": "MediCure", "quantity_available": 25, "expiry_date": "2023-09-30", "price": 14.49},
-        {"scientific_name": "Celecoxib", "trade_name": "Celebrex", "manufacturer": "Relief Pharmaceuticals", "quantity_available": 40, "expiry_date": "2024-01-25", "price": 16.99},
-        {"scientific_name": "Indomethacin", "trade_name": "Indocin", "manufacturer": "Pharma Solutions", "quantity_available": 20, "expiry_date": "2023-12-10", "price": 13.29},
-        {"scientific_name": "Methylprednisolone", "trade_name": "Medrol", "manufacturer": "Wellness Pharma", "quantity_available": 30, "expiry_date": "2024-02-15", "price": 15.79},
-        {"scientific_name": "Etodolac", "trade_name": "Lodine", "manufacturer": "Care Pharmaceuticals", "quantity_available": 35, "expiry_date": "2024-03-05", "price": 11.99},
-        {"scientific_name": "Nabumetone", "trade_name": "Relafen", "manufacturer": "Pain Relief Inc.", "quantity_available": 45, "expiry_date": "2024-04-30", "price": 12.99},
-        {"scientific_name": "Diflunisal", "trade_name": "Dolobid", "manufacturer": "Cure Pharma", "quantity_available": 22, "expiry_date": "2023-11-20", "price": 10.59},
-        {"scientific_name": "Sulindac", "trade_name": "Clinoril", "manufacturer": "Health Solutions", "quantity_available": 18, "expiry_date": "2024-05-20", "price": 14.99},
-        {"scientific_name": "Ketoprofen", "trade_name": "Orudis", "manufacturer": "MediTech", "quantity_available": 28, "expiry_date": "2024-06-10", "price": 13.79},
-        {"scientific_name": "Piroxicam", "trade_name": "Feldene", "manufacturer": "Pain Solutions", "quantity_available": 33, "expiry_date": "2023-10-15", "price": 11.89}
-      ],"Antibiotic": [
-        {"scientific_name": "Amoxicillin", "trade_name": "Amoxil", "manufacturer": "MediPharma", "quantity_available": 50, "expiry_date": "2024-01-20", "price": 8.99},
-        {"scientific_name": "Ciprofloxacin", "trade_name": "Cipro", "manufacturer": "Pharma Solutions", "quantity_available": 40, "expiry_date": "2023-12-05", "price": 10.49},
-        {"scientific_name": "Azithromycin", "trade_name": "Zithromax", "manufacturer": "Health Solutions", "quantity_available": 35, "expiry_date": "2024-02-10", "price": 12.99},
-        {"scientific_name": "Doxycycline", "trade_name": "Vibramycin", "manufacturer": "Care Pharmaceuticals", "quantity_available": 45, "expiry_date": "2024-03-15", "price": 11.79},
-        {"scientific_name": "Cephalexin", "trade_name": "Keflex", "manufacturer": "Wellness Pharma", "quantity_available": 30, "expiry_date": "2024-04-20", "price": 9.89},
-        {"scientific_name": "Levofloxacin", "trade_name": "Levaquin", "manufacturer": "Pain Relief Inc.", "quantity_available": 25, "expiry_date": "2023-11-30", "price": 13.99},
-        {"scientific_name": "Metronidazole", "trade_name": "Flagyl", "manufacturer": "Relief Pharmaceuticals", "quantity_available": 55, "expiry_date": "2024-05-25", "price": 10.99},
-        {"scientific_name": "Clarithromycin", "trade_name": "Biaxin", "manufacturer": "Cure Pharma", "quantity_available": 20, "expiry_date": "2023-10-10", "price": 14.29},
-        {"scientific_name": "Trimethoprim-sulfamethoxazole", "trade_name": "Bactrim", "manufacturer": "MediTech", "quantity_available": 28, "expiry_date": "2024-06-30", "price": 11.49},
-        {"scientific_name": "Clindamycin", "trade_name": "Cleocin", "manufacturer": "Pain Solutions", "quantity_available": 22, "expiry_date": "2023-09-15", "price": 15.79}
-      ],"Antipyretic": [
-        {"scientific_name": "Acetaminophen", "trade_name": "Tylenol", "manufacturer": "MediPharma", "quantity_available": 70, "expiry_date": "2024-01-15", "price": 6.49},
-        {"scientific_name": "Ibuprofen", "trade_name": "Advil", "manufacturer": "XYZ Pharmaceuticals", "quantity_available": 60, "expiry_date": "2023-11-30", "price": 7.99},
-        {"scientific_name": "Aspirin", "trade_name": "Bayer Aspirin", "manufacturer": "PharmaCorp", "quantity_available": 90, "expiry_date": "2023-12-15", "price": 4.99},
-        {"scientific_name": "Naproxen", "trade_name": "Aleve", "manufacturer": "MediTech", "quantity_available": 80, "expiry_date": "2023-10-31", "price": 9.99},
-        {"scientific_name": "Paracetamol", "trade_name": "Panadol", "manufacturer": "ABC Pharmaceuticals", "quantity_available": 100, "expiry_date": "2023-12-31", "price": 5.99},
-        {"scientific_name": "Dipyrone", "trade_name": "Novalgin", "manufacturer": "Health Solutions", "quantity_available": 55, "expiry_date": "2024-02-28", "price": 8.49},
-        {"scientific_name": "Etoricoxib", "trade_name": "Arcoxia", "manufacturer": "Wellness Pharma", "quantity_available": 30, "expiry_date": "2024-04-10", "price": 11.99},
-        {"scientific_name": "Indomethacin", "trade_name": "Indocin", "manufacturer": "Pharma Solutions", "quantity_available": 45, "expiry_date": "2024-03-05", "price": 10.99},
-        {"scientific_name": "Celecoxib", "trade_name": "Celebrex", "manufacturer": "Relief Pharmaceuticals", "quantity_available": 35, "expiry_date": "2024-01-25", "price": 16.99},
-        {"scientific_name": "Diclofenac", "trade_name": "Voltaren", "manufacturer": "Global Pharma", "quantity_available": 40, "expiry_date": "2024-03-20", "price": 8.79}
-      ],"Antihistamine": [
-        {"scientific_name": "Cetirizine", "trade_name": "Zyrtec", "manufacturer": "MediPharma", "quantity_available": 50, "expiry_date": "2024-01-20", "price": 8.99},
-        {"scientific_name": "Loratadine", "trade_name": "Claritin", "manufacturer": "Pharma Solutions", "quantity_available": 40, "expiry_date": "2023-12-05", "price": 10.49},
-        {"scientific_name": "Diphenhydramine", "trade_name": "Benadryl", "manufacturer": "Health Solutions", "quantity_available": 35, "expiry_date": "2024-02-10", "price": 12.99},
-        {"scientific_name": "Fexofenadine", "trade_name": "Allegra", "manufacturer": "Care Pharmaceuticals", "quantity_available": 45, "expiry_date": "2024-03-15", "price": 11.79},
-        {"scientific_name": "Desloratadine", "trade_name": "Clarinex", "manufacturer": "Wellness Pharma", "quantity_available": 30, "expiry_date": "2024-04-20", "price": 9.89},
-        {"scientific_name": "Hydroxyzine", "trade_name": "Atarax", "manufacturer": "Pain Relief Inc.", "quantity_available": 25, "expiry_date": "2023-11-30", "price": 13.99},
-        {"scientific_name": "Levocetirizine", "trade_name": "Xyzal", "manufacturer": "Relief Pharmaceuticals", "quantity_available": 55, "expiry_date": "2024-05-25", "price": 10.99},
-        {"scientific_name": "Azelastine", "trade_name": "Astelin", "manufacturer": "Cure Pharma", "quantity_available": 20, "expiry_date": "2023-10-10", "price": 14.29},
-        {"scientific_name": "Ebastine", "trade_name": "Kestine", "manufacturer": "MediTech", "quantity_available": 28, "expiry_date": "2024-06-30", "price": 11.49},
-        {"scientific_name": "Olopatadine", "trade_name": "Patanol", "manufacturer": "Pain Solutions", "quantity_available": 22, "expiry_date": "2023-09-15", "price": 15.79}
-      ],"Others":[]
-      
-      
-      
+        "Analgesic": [
+            {
+                "scientific_name": "Paracetamol",
+                "trade_name": "Panadol",
+                "manufacturer": "ABC Pharmaceuticals",
+                "quantity_available": 100,
+                "expiry_date": "2023-12-31",
+                "price": 5.99
+            },
+            {
+                "scientific_name": "Ibuprofen",
+                "trade_name": "Advil",
+                "manufacturer": "XYZ Pharmaceuticals",
+                "quantity_available": 50,
+                "expiry_date": "2023-11-30",
+                "price": 7.99
+            },
+            {
+                "scientific_name": "Acetaminophen",
+                "trade_name": "Tylenol",
+                "manufacturer": "MediPharma",
+                "quantity_available": 70,
+                "expiry_date": "2024-01-15",
+                "price": 6.49
+            },
+            {
+                "scientific_name": "Aspirin",
+                "trade_name": "Bayer Aspirin",
+                "manufacturer": "PharmaCorp",
+                "quantity_available": 90,
+                "expiry_date": "2023-12-15",
+                "price": 4.99
+            },
+            {
+                "scientific_name": "Naproxen",
+                "trade_name": "Aleve",
+                "manufacturer": "MediTech",
+                "quantity_available": 60,
+                "expiry_date": "2023-10-31",
+                "price": 9.99
+            },
+            {
+                "scientific_name": "Diclofenac",
+                "trade_name": "Voltaren",
+                "manufacturer": "Global Pharma",
+                "quantity_available": 40,
+                "expiry_date": "2024-03-20",
+                "price": 8.79
+            },
+            {
+                "scientific_name": "Morphine",
+                "trade_name": "MS Contin",
+                "manufacturer": "Pain Relief Inc.",
+                "quantity_available": 30,
+                "expiry_date": "2024-05-05",
+                "price": 15.99
+            },
+            {
+                "scientific_name": "Codeine",
+                "trade_name": "Robitussin AC",
+                "manufacturer": "Cough Care",
+                "quantity_available": 25,
+                "expiry_date": "2024-02-28",
+                "price": 12.99
+            },
+            {
+                "scientific_name": "Tramadol",
+                "trade_name": "Ultram",
+                "manufacturer": "Relief Pharmaceuticals",
+                "quantity_available": 55,
+                "expiry_date": "2024-04-10",
+                "price": 11.49
+            },
+            {
+                "scientific_name": "Hydrocodone",
+                "trade_name": "Vicodin",
+                "manufacturer": "Pain Solutions",
+                "quantity_available": 35,
+                "expiry_date": "2024-06-15",
+                "price": 18.99
+            },
+            {
+                "scientific_name": "Paracetamol",
+                "trade_name": "molham",
+                "manufacturer": "ABC Pharmaceuticals",
+                "quantity_available": 100,
+                "expiry_date": "2023-12-31",
+                "price": 5.99
+            }
+        ],
+        "Anti-inflammatory": [
+            {
+                "scientific_name": "Prednisone",
+                "trade_name": "Deltasone",
+                "manufacturer": "MediCure",
+                "quantity_available": 25,
+                "expiry_date": "2023-09-30",
+                "price": 14.49
+            },
+            {
+                "scientific_name": "Celecoxib",
+                "trade_name": "Celebrex",
+                "manufacturer": "Relief Pharmaceuticals",
+                "quantity_available": 40,
+                "expiry_date": "2024-01-25",
+                "price": 16.99
+            },
+            {
+                "scientific_name": "Indomethacin",
+                "trade_name": "Indocin",
+                "manufacturer": "Pharma Solutions",
+                "quantity_available": 20,
+                "expiry_date": "2023-12-10",
+                "price": 13.29
+            },
+            {
+                "scientific_name": "Methylprednisolone",
+                "trade_name": "Medrol",
+                "manufacturer": "Wellness Pharma",
+                "quantity_available": 30,
+                "expiry_date": "2024-02-15",
+                "price": 15.79
+            },
+            {
+                "scientific_name": "Etodolac",
+                "trade_name": "Lodine",
+                "manufacturer": "Care Pharmaceuticals",
+                "quantity_available": 35,
+                "expiry_date": "2024-03-05",
+                "price": 11.99
+            },
+            {
+                "scientific_name": "Nabumetone",
+                "trade_name": "Relafen",
+                "manufacturer": "Pain Relief Inc.",
+                "quantity_available": 45,
+                "expiry_date": "2024-04-30",
+                "price": 12.99
+            },
+            {
+                "scientific_name": "Diflunisal",
+                "trade_name": "Dolobid",
+                "manufacturer": "Cure Pharma",
+                "quantity_available": 22,
+                "expiry_date": "2023-11-20",
+                "price": 10.59
+            },
+            {
+                "scientific_name": "Sulindac",
+                "trade_name": "Clinoril",
+                "manufacturer": "Health Solutions",
+                "quantity_available": 18,
+                "expiry_date": "2024-05-20",
+                "price": 14.99
+            },
+            {
+                "scientific_name": "Ketoprofen",
+                "trade_name": "Orudis",
+                "manufacturer": "MediTech",
+                "quantity_available": 28,
+                "expiry_date": "2024-06-10",
+                "price": 13.79
+            },
+            {
+                "scientific_name": "Piroxicam",
+                "trade_name": "Feldene",
+                "manufacturer": "Pain Solutions",
+                "quantity_available": 33,
+                "expiry_date": "2023-10-15",
+                "price": 11.89
+            }
+        ],
+        "Antibiotic": [
+            {
+                "scientific_name": "Amoxicillin",
+                "trade_name": "Amoxil",
+                "manufacturer": "MediPharma",
+                "quantity_available": 50,
+                "expiry_date": "2024-01-20",
+                "price": 8.99
+            },
+            {
+                "scientific_name": "Ciprofloxacin",
+                "trade_name": "Cipro",
+                "manufacturer": "Pharma Solutions",
+                "quantity_available": 40,
+                "expiry_date": "2023-12-05",
+                "price": 10.49
+            },
+            {
+                "scientific_name": "Azithromycin",
+                "trade_name": "Zithromax",
+                "manufacturer": "Health Solutions",
+                "quantity_available": 35,
+                "expiry_date": "2024-02-10",
+                "price": 12.99
+            },
+            {
+                "scientific_name": "Doxycycline",
+                "trade_name": "Vibramycin",
+                "manufacturer": "Care Pharmaceuticals",
+                "quantity_available": 45,
+                "expiry_date": "2024-03-15",
+                "price": 11.79
+            },
+            {
+                "scientific_name": "Cephalexin",
+                "trade_name": "Keflex",
+                "manufacturer": "Wellness Pharma",
+                "quantity_available": 30,
+                "expiry_date": "2024-04-20",
+                "price": 9.89
+            },
+            {
+                "scientific_name": "Levofloxacin",
+                "trade_name": "Levaquin",
+                "manufacturer": "Pain Relief Inc.",
+                "quantity_available": 25,
+                "expiry_date": "2023-11-30",
+                "price": 13.99
+            },
+            {
+                "scientific_name": "Metronidazole",
+                "trade_name": "Flagyl",
+                "manufacturer": "Relief Pharmaceuticals",
+                "quantity_available": 55,
+                "expiry_date": "2024-05-25",
+                "price": 10.99
+            },
+            {
+                "scientific_name": "Clarithromycin",
+                "trade_name": "Biaxin",
+                "manufacturer": "Cure Pharma",
+                "quantity_available": 20,
+                "expiry_date": "2023-10-10",
+                "price": 14.29
+            },
+            {
+                "scientific_name": "Trimethoprim-sulfamethoxazole",
+                "trade_name": "Bactrim",
+                "manufacturer": "MediTech",
+                "quantity_available": 28,
+                "expiry_date": "2024-06-30",
+                "price": 11.49
+            },
+            {
+                "scientific_name": "Clindamycin",
+                "trade_name": "Cleocin",
+                "manufacturer": "Pain Solutions",
+                "quantity_available": 22,
+                "expiry_date": "2023-09-15",
+                "price": 15.79
+            }
+        ],
+        "Antipyretic": [
+            {
+                "scientific_name": "Acetaminophen",
+                "trade_name": "Tylenol",
+                "manufacturer": "MediPharma",
+                "quantity_available": 70,
+                "expiry_date": "2024-01-15",
+                "price": 6.49
+            },
+            {
+                "scientific_name": "Ibuprofen",
+                "trade_name": "Advil",
+                "manufacturer": "XYZ Pharmaceuticals",
+                "quantity_available": 60,
+                "expiry_date": "2023-11-30",
+                "price": 7.99
+            },
+            {
+                "scientific_name": "Aspirin",
+                "trade_name": "Bayer Aspirin",
+                "manufacturer": "PharmaCorp",
+                "quantity_available": 90,
+                "expiry_date": "2023-12-15",
+                "price": 4.99
+            },
+            {
+                "scientific_name": "Naproxen",
+                "trade_name": "Aleve",
+                "manufacturer": "MediTech",
+                "quantity_available": 80,
+                "expiry_date": "2023-10-31",
+                "price": 9.99
+            },
+            {
+                "scientific_name": "Paracetamol",
+                "trade_name": "Panadol",
+                "manufacturer": "ABC Pharmaceuticals",
+                "quantity_available": 100,
+                "expiry_date": "2023-12-31",
+                "price": 5.99
+            },
+            {
+                "scientific_name": "Dipyrone",
+                "trade_name": "Novalgin",
+                "manufacturer": "Health Solutions",
+                "quantity_available": 55,
+                "expiry_date": "2024-02-28",
+                "price": 8.49
+            },
+            {
+                "scientific_name": "Etoricoxib",
+                "trade_name": "Arcoxia",
+                "manufacturer": "Wellness Pharma",
+                "quantity_available": 30,
+                "expiry_date": "2024-04-10",
+                "price": 11.99
+            },
+            {
+                "scientific_name": "Indomethacin",
+                "trade_name": "Indocin",
+                "manufacturer": "Pharma Solutions",
+                "quantity_available": 45,
+                "expiry_date": "2024-03-05",
+                "price": 10.99
+            },
+            {
+                "scientific_name": "Celecoxib",
+                "trade_name": "Celebrex",
+                "manufacturer": "Relief Pharmaceuticals",
+                "quantity_available": 35,
+                "expiry_date": "2024-01-25",
+                "price": 16.99
+            },
+            {
+                "scientific_name": "Diclofenac",
+                "trade_name": "Voltaren",
+                "manufacturer": "Global Pharma",
+                "quantity_available": 40,
+                "expiry_date": "2024-03-20",
+                "price": 8.79
+            }
+        ],
+        "Antihistamine": [
+            {
+                "scientific_name": "Cetirizine",
+                "trade_name": "Zyrtec",
+                "manufacturer": "MediPharma",
+                "quantity_available": 50,
+                "expiry_date": "2024-01-20",
+                "price": 8.99
+            },
+            {
+                "scientific_name": "Loratadine",
+                "trade_name": "Claritin",
+                "manufacturer": "Pharma Solutions",
+                "quantity_available": 40,
+                "expiry_date": "2023-12-05",
+                "price": 10.49
+            },
+            {
+                "scientific_name": "Diphenhydramine",
+                "trade_name": "Benadryl",
+                "manufacturer": "Health Solutions",
+                "quantity_available": 35,
+                "expiry_date": "2024-02-10",
+                "price": 12.99
+            },
+            {
+                "scientific_name": "Fexofenadine",
+                "trade_name": "Allegra",
+                "manufacturer": "Care Pharmaceuticals",
+                "quantity_available": 45,
+                "expiry_date": "2024-03-15",
+                "price": 11.79
+            },
+            {
+                "scientific_name": "Desloratadine",
+                "trade_name": "Clarinex",
+                "manufacturer": "Wellness Pharma",
+                "quantity_available": 30,
+                "expiry_date": "2024-04-20",
+                "price": 9.89
+            },
+            {
+                "scientific_name": "Hydroxyzine",
+                "trade_name": "Atarax",
+                "manufacturer": "Pain Relief Inc.",
+                "quantity_available": 25,
+                "expiry_date": "2023-11-30",
+                "price": 13.99
+            },
+            {
+                "scientific_name": "Levocetirizine",
+                "trade_name": "Xyzal",
+                "manufacturer": "Relief Pharmaceuticals",
+                "quantity_available": 55,
+                "expiry_date": "2024-05-25",
+                "price": 10.99
+            },
+            {
+                "scientific_name": "Azelastine",
+                "trade_name": "Astelin",
+                "manufacturer": "Cure Pharma",
+                "quantity_available": 20,
+                "expiry_date": "2023-10-10",
+                "price": 14.29
+            },
+            {
+                "scientific_name": "Ebastine",
+                "trade_name": "Kestine",
+                "manufacturer": "MediTech",
+                "quantity_available": 28,
+                "expiry_date": "2024-06-30",
+                "price": 11.49
+            },
+            {
+                "scientific_name": "Olopatadine",
+                "trade_name": "Patanol",
+                "manufacturer": "Pain Solutions",
+                "quantity_available": 22,
+                "expiry_date": "2023-09-15",
+                "price": 15.79
+            }
+        ],
+        "Others": []
     }
 }
-  

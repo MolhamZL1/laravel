@@ -143,4 +143,40 @@ class Pharmacy extends Controller
  
          return $results;
      }
+      public function addMedicine(Request $request)
+    {
+        // التحقق من وجود مستخدم مسجل
+        if (Auth::check()) {
+            // تحويل ملف JSON إلى مصفوفة PHP
+            $jsonFile = public_path('path/to/your/file.json');
+            $jsonContent = file_get_contents($jsonFile);
+            $medicinesData = json_decode($jsonContent, true);
+
+            // تحقق من وجود التصنيف
+            $category = $request->input('category');
+            if (isset($medicinesData['categories'][$category])) {
+                // إضافة دواء جديد
+                $newMedicine = [
+                    'scientific_name' => $request->input('scientific_name'),
+                    'trade_name' => $request->input('trade_name'),
+                    'manufacturer' => $request->input('manufacturer'),
+                    'quantity_available' => $request->input('quantity_available'),
+                    'expiry_date' => $request->input('expiry_date'),
+                    'price' => $request->input('price'),
+                ];
+
+                // إضافة الدواء إلى التصنيف
+                $medicinesData['categories'][$category][] = $newMedicine;
+
+                // حفظ التغييرات إلى الملف JSON
+                file_put_contents($jsonFile, json_encode($medicinesData, JSON_PRETTY_PRINT));
+
+                return response()->json(['message' => 'تمت إضافة الدواء بنجاح']);
+            } else {
+                return response()->json(['error' => 'التصنيف غير موجود']);
+            }
+        } else {
+            return response()->json(['error' => 'يجب تسجيل الدخول لإضافة دواء']);
+        }
+    }
 }
