@@ -112,7 +112,7 @@ class Pharmacy extends Controller
          if (isset($jsoncontent['categories'][$category])) {
              return response()->json( [$category]);
          } else {
-             return response()->json(['message' => 'Not found'], 404);
+             return response()->json([]);
          }
      }
      public function searchMedicine($query)
@@ -143,47 +143,72 @@ class Pharmacy extends Controller
  
          return $results;
      }
-    public function addCart(Request $request)
-    {
-        $filepath = 'C:\xampp\htdocs\laravel\jsons\Users.json';
+    public function addToCart(Request $request)
+{
+    $filepath = 'C:\xampp\htdocs\laravel\jsons\Users.json';
         $filecontent = file_get_contents($filepath);
         $jsoncontent = json_decode($filecontent, true);
         $token = $request->input('token');
-    
+
         foreach ($jsoncontent as $item) {
             if (isset($item['token']) && $item['token'] === $token) {
-                // تحويل ملف JSON إلى مصفوفة PHP
-                $jsonFile = 'C:\xampp\htdocs\laravel\jsons\Medicines.json';
-                $jsonContent = file_get_contents($jsonFile);
-                $medicinesData = json_decode($jsonContent, true);
-    
-                // تحقق من وجود التصنيف
-                $category = $request->input('category');
-                if (isset($medicinesData['categories'][$category])) {
-                    // إضافة دواء جديد
-                    $newMedicine = [
-                        'scientific_name' => $request->input('scientific_name'),
-                        'trade_name' => $request->input('trade_name'),
-                        'manufacturer' => $request->input('manufacturer'),
-                        'quantity_available' => $request->input('quantity_available'),
-                        'expiry_date' => $request->input('expiry_date'),
-                        'price' => $request->input('price'),
-                    ];
-    
-                    // إضافة الدواء إلى التصنيف
-                    $medicinesData['categories'][$category][] = $newMedicine;
-    
-                    // حفظ التغييرات إلى الملف JSON
-                    file_put_contents($jsonFile, json_encode($medicinesData, JSON_PRETTY_PRINT));
-    
-                    return response()->json(['message' => 'تمت إضافة الدواء بنجاح']);
-                } else {
-                    return response()->json(['error' => 'التصنيف غير موجود']);
+
+    $jsonFile = 'C:\xampp\htdocs\laravel\jsons\Medicines.json';
+    $jsonContent = file_get_contents($jsonFile);
+    $medicinesData = json_decode($jsonContent, true);
+
+    $medicineId = $request->input('id');
+    $quantity = $request->input('quantity');
+
+    foreach ($medicinesData['categories'] as $category => $medicines) {
+        foreach ($medicines as  $medicine) {
+            if ($medicine['id'] === $medicineId) {
+                // العثور على الدواء بناءً على الـ ID
+
+                // التحقق من توفر كمية كافية
+                if ($quantity > $medicine['quantity_available']) {
+                    return response()->json(['error' => 'الكمية المطلوبة غير متاحة']);
                 }
+
+                // إضافة الدواء إلى سلة المستخدم
+                $cartItem = [
+                    'id' => $medicine['id'],
+                    'category' => $category,
+                    'scientific_name' => $medicine['scientific_name'],
+                    'trade_name' => $medicine['trade_name'],
+                    'quantity' => $quantity,
+                    'price' => $medicine['price'],
+                ];
+                $cartpath = 'C:\xampp\htdocs\laravel\jsons\Cart.json';
+        $cartcontent = file_get_contents($cartpath);
+        $cart = json_decode($cartcontent, true);
+                // تحقق من وجود سلة للمستخدم، وإنشاءها إذا لم تكن موجودة
+                if (!isset($cart['carts'][$token])) {
+                    $cart['carts'][$token] = [];
+                }
+
+                // إضافة الدواء إلى سلة المستخدم
+                $cart['carts'][$token][] = $cartItem;
+
+                // حفظ التغييرات إلى ملف JSON
+                file_put_contents($cartpath, json_encode($cart, JSON_PRETTY_PRINT));
+                
+                return response()->json(['message' => 'تمت إضافة الدواء إلى السلة بنجاح']);
             }
         }
-    
-        // إذا لم يتم العثور على المستخدم
-        return response()->json(['error' => 'التسجيل مطلوب']);
     }
+
+    // إذا لم يتم العثور على الدواء بناءً على الـ ID
+    return response()->json(['error' => 'الدواء غير موجود']);
+}}
+return response()->json(['error' => 'التسجيل مطلوب']);
+}
+public function getCart($token)
+{
+    $filepath = 'C:\xampp\htdocs\laravel\jsons\Cart.json'; 
+    $filecontent = file_get_contents($filepath);
+    $jsoncontent = json_decode($filecontent, true);
+    $medicines = $jsoncontent['carts'][$token] ?? [];
+    return response()->json( $medicines);
+}
 }

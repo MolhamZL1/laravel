@@ -19,18 +19,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
     
 });
+// Route pharmacies
 Route::post('/register', [Pharmacy::class, 'register']);
 Route::post('/login', [Pharmacy::class, 'login']);
 Route::get('/categories' , [Pharmacy::class ,'getCategories']);
 Route::get('/medicines/{category}' , [Pharmacy::class ,'getMedicinesByCategory']);
 Route::get('/searchByCategory/{category}' , [Pharmacy::class , 'searchByCategory']); 
 Route::get('/searchMedicine/{searchTerm}' , [Pharmacy::class , 'searchMedicine']); 
+Route::post('/addToCart' , [Pharmacy::class , 'addToCart']);//id,quantity,token
+Route::get('/cart/{token}' , [Pharmacy::class , 'getCart']);
 //Route::post('/addOrder' , [Pharmacy::class , 'addOrder']);
 //Route::get('/orders' , [Pharmacy::class , 'orders']); 
-//Route::post('/addCart' , [Pharmacy::class , 'addCart']);
-//Route::get('/cart' , [Pharmacy::class , 'cart']);
 
-// Route Warehouse Owner
+// Route repos Owner
 Route::post('/loginAdmin' , [repo::class , 'loginAdmin']);
 Route::post('/registerAdmin' , [repo::class , 'registerAdmin']); 
 //Route::post('/order_modify' , [repo::class , 'ordermodify']);
