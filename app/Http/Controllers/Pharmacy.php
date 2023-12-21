@@ -57,6 +57,7 @@ class Pharmacy extends Controller
          return response()->json([
              'message' => 'Registration successful',
              'token' => $token,
+             'username' => $username,
          ]);
      }
      
@@ -74,18 +75,20 @@ class Pharmacy extends Controller
              return response()->json([
                  'message' => 'Login successful',
                  'token' => $item['token'],
+                 'username' => $item['username'],
              ]);
             else 
             return response()->json([
              'message' => 'password is incorrect'
          ], 401);
          }
-         else 
+        }
+          
          return response()->json([
              'message' => 'phone number is incorrect'
          ], 401);    
          
-     }
+     
  }
  public function getCategories()
      {
@@ -120,9 +123,6 @@ class Pharmacy extends Controller
          $filepath = 'C:\xampp\htdocs\laravel\jsons\Medicines.json'; 
          $filecontent = file_get_contents($filepath);
          $jsoncontent = json_decode($filecontent, true);
- 
- 
-        
          $results = $this->searchInMedicines($jsoncontent, $query);
  
          return response()->json($results);
@@ -167,16 +167,16 @@ class Pharmacy extends Controller
 
                 // التحقق من توفر كمية كافية
                 if ($quantity > $medicine['quantity_available']) {
-                    return response()->json(['error' => 'الكمية المطلوبة غير متاحة']);
+                    return response()->json(['error' => 'الكمية المطلوبة غير متاحة'],404);
                 }
 
                 // إضافة الدواء إلى سلة المستخدم
                 $cartItem = [
                     'id' => $medicine['id'],
-                    'category' => $category,
+                    'category' => $category, 
                     'scientific_name' => $medicine['scientific_name'],
                     'trade_name' => $medicine['trade_name'],
-                    'quantity' => $quantity,
+                    'quantity_available' => $quantity,
                     "manufacturer"=> $medicine['manufacturer'],
                     'price' => $medicine['price'],
                     "expiry_date"=> $medicine["expiry_date"],
@@ -201,20 +201,22 @@ class Pharmacy extends Controller
     }
 
     // إذا لم يتم العثور على الدواء بناءً على الـ ID
-    return response()->json(['error' => 'الدواء غير موجود']);
+    return response()->json(['error' => 'الدواء غير موجود'],404);
 }}
-return response()->json(['error' => 'التسجيل مطلوب']);
+return response()->json(['error' => 'التسجيل مطلوب'],404);
 }
-public function getCart(Request $token)
+public function getCart($token)
 {
     $filepath = 'C:\xampp\htdocs\laravel\jsons\Cart.json'; 
     $filecontent = file_get_contents($filepath);
     $jsoncontent = json_decode($filecontent, true);
-    $medicines = $jsoncontent['carts']["Ic9asVS7Y47iNVUn6ERh9RIQJZHXKWDx7zcH1jIUHbeLcL6lY2L320CI66tF"] ?? [];
+    $medicines = $jsoncontent['carts'][$token] ?? [];
     return response()->json($medicines);
 }
 public function order(Request $request)
 {
+    $totalQuantity = 0;
+    $totalPrice = 0;
     $jsonFilePath = 'C:\xampp\htdocs\laravel\jsons\Cart.json';
     $orderFilePath = 'C:\xampp\htdocs\laravel\jsons\Orders.json';
 
@@ -225,11 +227,9 @@ public function order(Request $request)
 
     if (isset($cartData['carts'][$token])) {
         $medicines = $cartData['carts'][$token];
-        $totalQuantity = 0;
-        $totalPrice = 0;
 
         foreach ($medicines as $medicine) {
-            $totalQuantity += $medicine['quantity'];
+            $totalQuantity += $medicine['quantity_available'];
             $totalPrice += $medicine['price'];
         }
 
@@ -243,17 +243,27 @@ public function order(Request $request)
             'medicines' => $medicines,
         ];
 
+        // Load existing orders data
         $ordersData = json_decode(file_get_contents($orderFilePath), true);
-        $ordersData['orders'][$token][] = $orderItem;
 
+        // Create a new order for the token or update existing orders
+        if (!isset($ordersData[$token])) {
+            $ordersData[$token] = ['orders' => []];
+        }
+
+        $ordersData[$token]['orders'][] = $orderItem;
+
+        // Save updated orders data
         file_put_contents($orderFilePath, json_encode($ordersData, JSON_PRETTY_PRINT));
 
         return response()->json(['message' => 'تمت إضافة الطلب بنجاح']);
     } else {
-        return response()->json(['error' => 'التسجيل مطلوب']);
+        return response()->json(['error' => 'التسجيل مطلوب'], 404);
     }
 }
-public function getOrders(Request $token)
+
+
+public function getOrders($token)
 {
     $filepath = 'C:\xampp\htdocs\laravel\jsons\Orders.json'; 
     $filecontent = file_get_contents($filepath);

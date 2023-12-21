@@ -20,16 +20,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     
 });
 // Route pharmacies
-Route::post('/register', [Pharmacy::class, 'register']);
-Route::post('/login', [Pharmacy::class, 'login']);
+Route::post('/register', [Pharmacy::class, 'register']);//username,phonenumber,password
+Route::post('/login', [Pharmacy::class, 'login']);//phonenumber,password
 Route::get('/categories' , [Pharmacy::class ,'getCategories']);
 Route::get('/medicines/{category}' , [Pharmacy::class ,'getMedicinesByCategory']);
 Route::get('/searchByCategory/{category}' , [Pharmacy::class , 'searchByCategory']); 
 Route::get('/searchMedicine/{searchTerm}' , [Pharmacy::class , 'searchMedicine']); 
 Route::post('/addToCart' , [Pharmacy::class , 'addToCart']);//id,quantity,token
-Route::get('/cart/{token}' , [Pharmacy::class , 'getCart']);
-Route::post('/addorder' , [Pharmacy::class , 'order']);
-Route::get('/orders' , [Pharmacy::class , 'getOrders']); 
+Route::get('/cart/{token}' , [Pharmacy::class , 'getCart']);//quary token
+Route::post('/addorder' , [Pharmacy::class , 'order']);//token,username
+Route::get('/orders/{token}' , [Pharmacy::class , 'getOrders']);//quary token
 
 // Route repos Owner
 Route::post('/loginAdmin' , [repo::class , 'loginAdmin']);

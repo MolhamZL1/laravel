@@ -1,5 +1,26 @@
 {
     "carts": {
-       
+        "1JbrdNgrymZ6bteRL4nYDIVsbhZo7RrWpn19M9ihfGR4udALUTxV3qNxFAFo": [
+            {
+                "id": "1",
+                "category": "Analgesic",
+                "scientific_name": "Paracetamol",
+                "trade_name": "Panadol",
+                "quantity_available": "66",
+                "manufacturer": "ABC Pharmaceuticals",
+                "price": 5.99,
+                "expiry_date": "2023-12-31"
+            },
+            {
+                "id": "1",
+                "category": "Analgesic",
+                "scientific_name": "Paracetamol",
+                "trade_name": "Panadol",
+                "quantity_available": "55",
+                "manufacturer": "ABC Pharmaceuticals",
+                "price": 5.99,
+                "expiry_date": "2023-12-31"
+            }
+        ]
     }
 }
