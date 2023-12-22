@@ -2,24 +2,54 @@
     "carts": {
         "1JbrdNgrymZ6bteRL4nYDIVsbhZo7RrWpn19M9ihfGR4udALUTxV3qNxFAFo": [
             {
-                "id": "1",
-                "category": "Analgesic",
-                "scientific_name": "Paracetamol",
-                "trade_name": "Panadol",
-                "quantity_available": "66",
-                "manufacturer": "ABC Pharmaceuticals",
-                "price": 5.99,
-                "expiry_date": "2023-12-31"
+                "id": "41",
+                "category": "Antihistamine",
+                "scientific_name": "Cetirizine",
+                "trade_name": "Zyrtec",
+                "quantity_available": "2",
+                "manufacturer": "MediPharma",
+                "price": 8.99,
+                "expiry_date": "2024-01-20"
             },
             {
-                "id": "1",
-                "category": "Analgesic",
-                "scientific_name": "Paracetamol",
-                "trade_name": "Panadol",
-                "quantity_available": "55",
-                "manufacturer": "ABC Pharmaceuticals",
-                "price": 5.99,
-                "expiry_date": "2023-12-31"
+                "id": "41",
+                "category": "Antihistamine",
+                "scientific_name": "Cetirizine",
+                "trade_name": "Zyrtec",
+                "quantity_available": "3",
+                "manufacturer": "MediPharma",
+                "price": 8.99,
+                "expiry_date": "2024-01-20"
+            },
+            {
+                "id": "41",
+                "category": "Antihistamine",
+                "scientific_name": "Cetirizine",
+                "trade_name": "Zyrtec",
+                "quantity_available": "4",
+                "manufacturer": "MediPharma",
+                "price": 8.99,
+                "expiry_date": "2024-01-20"
+            },
+            {
+                "id": "12",
+                "category": "Anti-inflammatory",
+                "scientific_name": "Celecoxib",
+                "trade_name": "Celebrex",
+                "quantity_available": "0",
+                "manufacturer": "Relief Pharmaceuticals",
+                "price": 16.99,
+                "expiry_date": "2024-01-25"
+            },
+            {
+                "id": "25",
+                "category": "Antibiotic",
+                "scientific_name": "Cephalexin",
+                "trade_name": "Keflex",
+                "quantity_available": "3",
+                "manufacturer": "Wellness Pharma",
+                "price": 9.89,
+                "expiry_date": "2024-04-20"
             }
         ]
     }

@@ -27,19 +27,31 @@ class Pharmacy extends Controller
          $phone = $request->input('phone');
          $password = $request->input('password');
          $hashedPassword = Hash::make($password);
-     
+         
+    
+    
          if (!$username || !$phone || !$password) {
              return response()->json([
                  'message' => 'All fields are required'
              ], 400);
          }
+         if (strlen($phone)>10||strlen($phone)<10) {
+            return response()->json([
+                'message' => 'phone number must be 10 numbers'
+            ], 400);
+        }
+        if (strlen($password) < 8) {
+            return response()->json([
+                'message' => 'password must be 8 char at least'
+            ], 400);
+        }
      
          // Check if the user already exists
          foreach ($jsoncontent as $item) {
              if ($phone == $item['phone']) {
                  return response()->json([
                      'message' => 'User already exists'
-                 ]);
+                 ],400);
              }
          }
           $token=Str::random(60);
@@ -85,7 +97,7 @@ class Pharmacy extends Controller
         }
           
          return response()->json([
-             'message' => 'phone number is incorrect'
+             'message' => 'phone number is not exist'
          ], 401);    
          
      
@@ -104,7 +116,7 @@ class Pharmacy extends Controller
          $filecontent = file_get_contents($filepath);
          $jsoncontent = json_decode($filecontent, true);
          $medicines = $jsoncontent['categories'][$category] ?? [];
-         return response()->json( $medicines);
+            return response()->json($medicines);  
      }
      public function searchByCategory($category)
      {
@@ -115,7 +127,7 @@ class Pharmacy extends Controller
          if (isset($jsoncontent['categories'][$category])) {
              return response()->json( [$category]);
          } else {
-             return response()->json();
+            return response()->json();
          }
      }
      public function searchMedicine($query)
@@ -124,8 +136,11 @@ class Pharmacy extends Controller
          $filecontent = file_get_contents($filepath);
          $jsoncontent = json_decode($filecontent, true);
          $results = $this->searchInMedicines($jsoncontent, $query);
- 
-         return response()->json($results);
+         if (!empty($results)) 
+            return response()->json($results);
+         else 
+            return response()->json();
+        
      }
  
      private function searchInMedicines($medicines, $query)
@@ -163,14 +178,9 @@ class Pharmacy extends Controller
     foreach ($medicinesData['categories'] as $category => $medicines) {
         foreach ($medicines as  $medicine) {
             if ($medicine['id'] === $medicineId) {
-                // العثور على الدواء بناءً على الـ ID
-
-                // التحقق من توفر كمية كافية
                 if ($quantity > $medicine['quantity_available']) {
-                    return response()->json(['error' => 'الكمية المطلوبة غير متاحة'],404);
+                    return response()->json(['error' => 'Not available'],404);
                 }
-
-                // إضافة الدواء إلى سلة المستخدم
                 $cartItem = [
                     'id' => $medicine['id'],
                     'category' => $category, 
@@ -195,15 +205,13 @@ class Pharmacy extends Controller
                 // حفظ التغييرات إلى ملف JSON
                 file_put_contents($cartpath, json_encode($cart, JSON_PRETTY_PRINT));
                 
-                return response()->json(['message' => 'تمت إضافة الدواء إلى السلة بنجاح']);
+                return response()->json(['message' => 'added succecfully']);
             }
         }
     }
-
-    // إذا لم يتم العثور على الدواء بناءً على الـ ID
-    return response()->json(['error' => 'الدواء غير موجود'],404);
+    return response()->json(['error' => 'not found'],404);
 }}
-return response()->json(['error' => 'التسجيل مطلوب'],404);
+return response()->json(['error' => 'registeration is required'],404);
 }
 public function getCart($token)
 {
@@ -239,7 +247,7 @@ public function order(Request $request)
             'status' => 'pending',
             'total_price' => $totalPrice,
             'total_quantity' => $totalQuantity,
-            'paid' => false,
+            'paid' => "Not Paid",
             'medicines' => $medicines,
         ];
 
@@ -255,10 +263,15 @@ public function order(Request $request)
 
         // Save updated orders data
         file_put_contents($orderFilePath, json_encode($ordersData, JSON_PRETTY_PRINT));
+        
+        unset($cartData['carts'][$token]);
 
-        return response()->json(['message' => 'تمت إضافة الطلب بنجاح']);
+        // Save updated cart data
+        file_put_contents($jsonFilePath, json_encode($cartData, JSON_PRETTY_PRINT));
+
+        return response()->json(['message' => "added succecfully"]);
     } else {
-        return response()->json(['error' => 'التسجيل مطلوب'], 404);
+        return response()->json(['error' => "registeration is required"], 404);
     }
 }
 
