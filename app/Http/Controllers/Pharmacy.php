@@ -178,6 +178,7 @@ class Pharmacy extends Controller
     foreach ($medicinesData['categories'] as $category => $medicines) {
         foreach ($medicines as  $medicine) {
             if ($medicine['id'] === $medicineId) {
+                
                 if ($quantity > $medicine['quantity_available']) {
                     return response()->json(['error' => 'Not available'],404);
                 }
@@ -244,7 +245,7 @@ public function order(Request $request)
         $orderItem = [
             'ordernumber' => uniqid(),
             'username' => $username,
-            'status' => 'pending',
+            'status' => 'in preparation',
             'total_price' => $totalPrice,
             'total_quantity' => $totalQuantity,
             'paid' => "Not Paid",

@@ -1,12 +1,12 @@
 {
-    "1JbrdNgrymZ6bteRL4nYDIVsbhZo7RrWpn19M9ihfGR4udALUTxV3qNxFAFo": {
+    "LiVx3yX0Itfq6efrAg8IyXdNvkvFEXABgWs30dfhr0PxRo8bBBaqMZku1dDZ": {
         "orders": [
             {
-                "ordernumber": "658586cc481fd",
+                "ordernumber": "6586d65c22ec9",
                 "username": "molham",
-                "status": "pending",
-                "total_price": 24.97,
-                "total_quantity": 126,
+                "status": "delivered",
+                "total_price": 10.98,
+                "total_quantity": 4,
                 "paid": "Not Paid",
                 "medicines": [
                     {
@@ -14,27 +14,61 @@
                         "category": "Analgesic",
                         "scientific_name": "Paracetamol",
                         "trade_name": "Panadol",
-                        "quantity_available": "66",
+                        "quantity_available": "2",
                         "manufacturer": "ABC Pharmaceuticals",
                         "price": 5.99,
                         "expiry_date": "2023-12-31"
                     },
                     {
-                        "id": "1",
+                        "id": "4",
                         "category": "Analgesic",
-                        "scientific_name": "Paracetamol",
-                        "trade_name": "Panadol",
-                        "quantity_available": "55",
-                        "manufacturer": "ABC Pharmaceuticals",
-                        "price": 5.99,
-                        "expiry_date": "2023-12-31"
-                    },
+                        "scientific_name": "Aspirin",
+                        "trade_name": "Bayer Aspirin",
+                        "quantity_available": "2",
+                        "manufacturer": "PharmaCorp",
+                        "price": 4.99,
+                        "expiry_date": "2023-12-15"
+                    }
+                ]
+            },
+            {
+                "ordernumber": "6586d76a3f093",
+                "username": "molham",
+                "status": "pending",
+                "total_price": 6.49,
+                "total_quantity": 2,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "3",
+                        "category": "Analgesic",
+                        "scientific_name": "Acetaminophen",
+                        "trade_name": "Tylenol",
+                        "quantity_available": "2",
+                        "manufacturer": "MediPharma",
+                        "price": 6.49,
+                        "expiry_date": "2024-01-15"
+                    }
+                ]
+            }
+        ]
+    },
+    "CXSiQ4DFXdYIsRQi0vLaff77Hw8IaHUhdgyJVWF9zXfFMmh3wP39Gb8oyGer": {
+        "orders": [
+            {
+                "ordernumber": "6586d7b5a9655",
+                "username": "ahmad",
+                "status": "pending",
+                "total_price": 12.99,
+                "total_quantity": 2,
+                "paid": "Not Paid",
+                "medicines": [
                     {
                         "id": "23",
                         "category": "Antibiotic",
                         "scientific_name": "Azithromycin",
                         "trade_name": "Zithromax",
-                        "quantity_available": "5",
+                        "quantity_available": "2",
                         "manufacturer": "Health Solutions",
                         "price": 12.99,
                         "expiry_date": "2024-02-10"
@@ -42,102 +76,22 @@
                 ]
             },
             {
-                "ordernumber": "65858b5693998",
-                "username": "molham",
-                "status": "pending",
-                "total_price": 24.97,
-                "total_quantity": 126,
-                "paid": "Not Paid",
-                "medicines": [
-                    {
-                        "id": "1",
-                        "category": "Analgesic",
-                        "scientific_name": "Paracetamol",
-                        "trade_name": "Panadol",
-                        "quantity_available": "66",
-                        "manufacturer": "ABC Pharmaceuticals",
-                        "price": 5.99,
-                        "expiry_date": "2023-12-31"
-                    },
-                    {
-                        "id": "1",
-                        "category": "Analgesic",
-                        "scientific_name": "Paracetamol",
-                        "trade_name": "Panadol",
-                        "quantity_available": "55",
-                        "manufacturer": "ABC Pharmaceuticals",
-                        "price": 5.99,
-                        "expiry_date": "2023-12-31"
-                    },
-                    {
-                        "id": "23",
-                        "category": "Antibiotic",
-                        "scientific_name": "Azithromycin",
-                        "trade_name": "Zithromax",
-                        "quantity_available": "5",
-                        "manufacturer": "Health Solutions",
-                        "price": 12.99,
-                        "expiry_date": "2024-02-10"
-                    }
-                ]
-            },
-            {
-                "ordernumber": "65858c61b0d3f",
-                "username": "molham",
-                "status": "pending",
-                "total_price": 8.49,
-                "total_quantity": 3,
-                "paid": "Not Paid",
-                "medicines": [
-                    {
-                        "id": "36",
-                        "category": "Antipyretic",
-                        "scientific_name": "Dipyrone",
-                        "trade_name": "Novalgin",
-                        "quantity_available": "3",
-                        "manufacturer": "Health Solutions",
-                        "price": 8.49,
-                        "expiry_date": "2024-02-28"
-                    }
-                ]
-            },
-            {
-                "ordernumber": "6585acd7153ae",
-                "username": "molham",
-                "status": "pending",
-                "total_price": 5.99,
-                "total_quantity": 55,
-                "paid": "Not Paid",
-                "medicines": [
-                    {
-                        "id": "1",
-                        "category": "Analgesic",
-                        "scientific_name": "Paracetamol",
-                        "trade_name": "Panadol",
-                        "quantity_available": "55",
-                        "manufacturer": "ABC Pharmaceuticals",
-                        "price": 5.99,
-                        "expiry_date": "2023-12-31"
-                    }
-                ]
-            },
-            {
-                "ordernumber": "6585ad4de6915",
-                "username": "molham",
-                "status": "pending",
-                "total_price": 16.99,
+                "ordernumber": "65871cb0bde45",
+                "username": "ahmad",
+                "status": "in preparation",
+                "total_price": 12.99,
                 "total_quantity": 1,
                 "paid": "Not Paid",
                 "medicines": [
                     {
-                        "id": "12",
-                        "category": "Anti-inflammatory",
-                        "scientific_name": "Celecoxib",
-                        "trade_name": "Celebrex",
+                        "id": "23",
+                        "category": "Antibiotic",
+                        "scientific_name": "Azithromycin",
+                        "trade_name": "Zithromax",
                         "quantity_available": "1",
-                        "manufacturer": "Relief Pharmaceuticals",
-                        "price": 16.99,
-                        "expiry_date": "2024-01-25"
+                        "manufacturer": "Health Solutions",
+                        "price": 12.99,
+                        "expiry_date": "2024-02-10"
                     }
                 ]
             }

@@ -34,5 +34,7 @@ Route::get('/orders/{token}' , [Pharmacy::class , 'getOrders']);//quary token
 // Route repos Owner
 Route::post('/loginAdmin' , [repo::class , 'loginAdmin']);
 Route::post('/registerAdmin' , [repo::class , 'registerAdmin']); 
-//Route::post('/order_modify' , [repo::class , 'ordermodify']);
-Route::post('/addMedicine' , [repo::class , 'addMedicine']); 
+Route::post('/addMedicine' , [repo::class , 'addMedicine']); //token and medecine
+Route::get('/allOrders' , [repo::class , 'getAllOrders']); 
+Route::post('/paidState' , [repo::class , 'Paidstate']); //token,ordernumber,state : paid or not pait
+Route::post('/state' , [repo::class , 'state']); //token,ordernumber,state : sent or delivered

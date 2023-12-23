@@ -7,7 +7,7 @@
                 "scientific_name": "Paracetamol",
                 "trade_name": "Panadol",
                 "manufacturer": "ABC Pharmaceuticals",
-                "quantity_available": 100,
+                "quantity_available": 92,
                 "expiry_date": "2023-12-31",
                 "price": 5.99
             },
@@ -17,7 +17,7 @@
                 "scientific_name": "Ibuprofen",
                 "trade_name": "Advil",
                 "manufacturer": "XYZ Pharmaceuticals",
-                "quantity_available": 50,
+                "quantity_available": 46,
                 "expiry_date": "2023-11-30",
                 "price": 7.99
             },
@@ -37,7 +37,7 @@
                 "scientific_name": "Aspirin",
                 "trade_name": "Bayer Aspirin",
                 "manufacturer": "PharmaCorp",
-                "quantity_available": 90,
+                "quantity_available": 82,
                 "expiry_date": "2023-12-15",
                 "price": 4.99
             },
@@ -47,7 +47,7 @@
                 "scientific_name": "Naproxen",
                 "trade_name": "Aleve",
                 "manufacturer": "MediTech",
-                "quantity_available": 60,
+                "quantity_available": 56,
                 "expiry_date": "2023-10-31",
                 "price": 9.99
             },
@@ -100,16 +100,6 @@
                 "quantity_available": 35,
                 "expiry_date": "2024-06-15",
                 "price": 18.99
-            },
-            {
-                "id": "6582c559aaf21",
-                "category": "Analgesic",
-                "scientific_name": "Paracetamol",
-                "trade_name": "molham",
-                "manufacturer": "ABC Pharmaceuticals",
-                "quantity_available": 100,
-                "expiry_date": "2023-12-31",
-                "price": 5.99
             }
         ],
         "Anti-inflammatory": [

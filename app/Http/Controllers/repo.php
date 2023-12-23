@@ -130,5 +130,109 @@ public function addMedicine(Request $request)
     // إذا لم يتم العثور على المستخدم
     return response()->json(['error' => 'التسجيل مطلوب']);
 }
+public function getAllOrders()
+{
+    $orderFilePath = 'C:\xampp\htdocs\laravel\jsons\Orders.json';
+
+    // Load existing orders data
+    $ordersData = json_decode(file_get_contents($orderFilePath), true);
+
+    if (!empty($ordersData)) {
+        $allOrders = [];
+
+        foreach ($ordersData as  $userData) {
+            $userOrders = $userData['orders'];
+            foreach ($userOrders as $order) {
+                $allOrders[] = $order;
+            }
+        }
+
+        return response()->json(['orders' => $allOrders]);
+    } else {
+        return response()->json(['message' => 'No orders found']);
+    }
+}
+public function Paidstate(Request $request)
+{
+    $orderNumber = $request->input('ordernumber');
+    $state = $request->input('state');
+    $orderFilePath = 'C:\xampp\htdocs\laravel\jsons\Orders.json';
+    // Load existing orders data
+    $ordersData = json_decode(file_get_contents($orderFilePath), true);
+
+    // تحديث حالة الطلب إلى "Paid" إذا كان الرقم صحيحًا
+    foreach ($ordersData as $token => &$userData) {
+        $filepath = 'C:\xampp\htdocs\laravel\jsons\Admins.json';
+    $filecontent = file_get_contents($filepath);
+    $jsoncontent = json_decode($filecontent, true);
+    $token = $request->input('token');
+
+    foreach ($jsoncontent as $item) {
+        if (isset($item['token']) && $item['token'] === $token) {
+        $userOrders = &$userData['orders'];
+        foreach ($userOrders as &$order) {
+            if ($order['ordernumber'] === $orderNumber) {
+                $order['paid'] = $state;
+                // حفظ التغييرات إلى ملف JSON
+                file_put_contents($orderFilePath, json_encode($ordersData, JSON_PRETTY_PRINT));
+                return response()->json(['message' => 'تم تحديث حالة الدفع بنجاح']);
+            }
+        }}}
+        return response()->json(['error' => 'التسجيل مطلوب']);
+    }
+
+    // إذا لم يتم العثور على الرقم
+    return response()->json(['error' => 'رقم الطلب غير صحيح']);
+}
+public function state(Request $request)
+{
+    $filepath = 'C:\xampp\htdocs\laravel\jsons\Admins.json';
+    $filecontent = file_get_contents($filepath);
+    $jsoncontent = json_decode($filecontent, true);
+    $token = $request->input('token');
+
+    foreach ($jsoncontent as $item) {
+        if (isset($item['token']) && $item['token'] === $token) {
+    $orderNumber = $request->input('ordernumber');
+    $state = $request->input('state');
+    $orderFilePath = 'C:\xampp\htdocs\laravel\jsons\Orders.json';
+    $medicinesFilePath = 'C:\xampp\htdocs\laravel\jsons\Medicines.json';
+
+    // Load existing orders data
+    $ordersData = json_decode(file_get_contents($orderFilePath), true);
+    // Load existing medicines data
+    $medicinesData = json_decode(file_get_contents($medicinesFilePath), true);
+
+    // تحديث حالة الطلب إلى "delivered" إذا كان الرقم صحيحًا
+    foreach ($ordersData as $token => &$userData) {
+        $userOrders = &$userData['orders'];
+        foreach ($userOrders as &$order) {
+            if ($order['ordernumber'] === $orderNumber) {
+                // تحديث حالة الطلب
+                $order['status'] = $state;
+
+                // تحديث الكمية المتاحة للأدوية في المستودع
+                if($state=="delivered"){
+                foreach ($order['medicines'] as $medicine) {
+                    $medicineId = $medicine['id'];
+                    $quantityOrdered = $medicine['quantity_available'];
+                    foreach ($medicinesData['categories'] as $category => $medicines) {
+                        foreach ($medicines as  $medicine1) {
+                            if ($medicine1['id'] === $medicineId) {
+                              $key=  array_search($medicine1,$medicines);
+                    $medicinesData['categories'][$medicine['category']][$key]['quantity_available'] -= $quantityOrdered;}}}
+                }
+            }
+                // حفظ التغييرات إلى ملف JSON لكل من الطلبات والأدوية
+                file_put_contents($orderFilePath, json_encode($ordersData, JSON_PRETTY_PRINT));
+                file_put_contents($medicinesFilePath, json_encode($medicinesData, JSON_PRETTY_PRINT));
+
+                return response()->json(['message' => 'تم تحديث حالة الطلب والمستودع بنجاح']);
+            }
+        }
+    }
+    return response()->json(['error' => 'رقم الطلب غير صحيح']);}}
+    return response()->json(['error' => 'التسجيل مطلوب']);
+}
 
 }
