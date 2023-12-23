@@ -212,7 +212,7 @@ public function state(Request $request)
                 $order['status'] = $state;
 
                 // تحديث الكمية المتاحة للأدوية في المستودع
-                if($state=="delivered"){
+                if($state=="received"){
                 foreach ($order['medicines'] as $medicine) {
                     $medicineId = $medicine['id'];
                     $quantityOrdered = $medicine['quantity_available'];
