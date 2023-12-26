@@ -30,7 +30,9 @@ Route::post('/addToCart' , [Pharmacy::class , 'addToCart']);//id,quantity,token
 Route::get('/cart/{token}' , [Pharmacy::class , 'getCart']);//quary token
 Route::post('/addorder' , [Pharmacy::class , 'order']);//token,username
 Route::get('/orders/{token}' , [Pharmacy::class , 'getOrders']);//quary token
-
+Route::post('/addfavorite' , [Pharmacy::class , 'addFavorite']);//token,id
+Route::get('/allfavorite/{token}' , [Pharmacy::class , 'getAllFavorites']);//quary token
+Route::get('/favorite/{token}' , [Pharmacy::class , 'getfavorite']);//quary token
 // Route repos Owner
 Route::post('/loginAdmin' , [repo::class , 'loginAdmin']);
 Route::post('/registerAdmin' , [repo::class , 'registerAdmin']); 

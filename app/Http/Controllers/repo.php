@@ -32,7 +32,7 @@ class repo extends Controller
             ], 400);
         }
     
-        // Check if the user already exists
+        
         foreach ($jsoncontent as $item) {
             if ($phone == $item['phone']) {
                 return response()->json([
@@ -41,7 +41,7 @@ class repo extends Controller
             }
         }
          $token=Str::random(60);
-        // Create user information
+       
         $info = [
             'username' => $username,
             'phone' => $phone,
@@ -94,15 +94,15 @@ public function addMedicine(Request $request)
 
     foreach ($jsoncontent as $item) {
         if (isset($item['token']) && $item['token'] === $token) {
-            // تحويل ملف JSON إلى مصفوفة PHP
+           
             $jsonFile = 'C:\xampp\htdocs\laravel\jsons\Medicines.json';
             $jsonContent = file_get_contents($jsonFile);
             $medicinesData = json_decode($jsonContent, true);
 
-            // تحقق من وجود التصنيف
+           
             $category = $request->input('category');
             if (isset($medicinesData['categories'][$category])) {
-                // إضافة دواء جديد
+               
                 $newMedicine = [
                     'id' => uniqid(),
                     'category'=> $request->input('category'),
@@ -114,27 +114,27 @@ public function addMedicine(Request $request)
                     'price' => $request->input('price'),
                 ];
 
-                // إضافة الدواء إلى التصنيف
+              
                 $medicinesData['categories'][$category][] = $newMedicine;
 
-                // حفظ التغييرات إلى الملف JSON
+               
                 file_put_contents($jsonFile, json_encode($medicinesData, JSON_PRETTY_PRINT));
 
-                return response()->json(['message' => 'تمت إضافة الدواء بنجاح']);
+                return response()->json(['message' => 'added succecfully']);
             } else {
-                return response()->json(['error' => 'التصنيف غير موجود']);
+                return response()->json(['error' => 'categoty is not exist']);
             }
         }
     }
 
-    // إذا لم يتم العثور على المستخدم
-    return response()->json(['error' => 'التسجيل مطلوب']);
+  
+    return response()->json(['error' => 'registeration is required']);
 }
 public function getAllOrders()
 {
     $orderFilePath = 'C:\xampp\htdocs\laravel\jsons\Orders.json';
 
-    // Load existing orders data
+    
     $ordersData = json_decode(file_get_contents($orderFilePath), true);
 
     if (!empty($ordersData)) {
@@ -157,10 +157,10 @@ public function Paidstate(Request $request)
     $orderNumber = $request->input('ordernumber');
     $state = $request->input('state');
     $orderFilePath = 'C:\xampp\htdocs\laravel\jsons\Orders.json';
-    // Load existing orders data
+    
     $ordersData = json_decode(file_get_contents($orderFilePath), true);
 
-    // تحديث حالة الطلب إلى "Paid" إذا كان الرقم صحيحًا
+   
     foreach ($ordersData as $token => &$userData) {
         $filepath = 'C:\xampp\htdocs\laravel\jsons\Admins.json';
     $filecontent = file_get_contents($filepath);
@@ -173,16 +173,16 @@ public function Paidstate(Request $request)
         foreach ($userOrders as &$order) {
             if ($order['ordernumber'] === $orderNumber) {
                 $order['paid'] = $state;
-                // حفظ التغييرات إلى ملف JSON
+                
                 file_put_contents($orderFilePath, json_encode($ordersData, JSON_PRETTY_PRINT));
-                return response()->json(['message' => 'تم تحديث حالة الدفع بنجاح']);
+                return response()->json(['message' => 'updated succecfully']);
             }
         }}}
-        return response()->json(['error' => 'التسجيل مطلوب']);
+        return response()->json(['error' => 'registeration is required']);
     }
 
-    // إذا لم يتم العثور على الرقم
-    return response()->json(['error' => 'رقم الطلب غير صحيح']);
+    
+    return response()->json(['error' => 'order number is not correct']);
 }
 public function state(Request $request)
 {
@@ -198,20 +198,20 @@ public function state(Request $request)
     $orderFilePath = 'C:\xampp\htdocs\laravel\jsons\Orders.json';
     $medicinesFilePath = 'C:\xampp\htdocs\laravel\jsons\Medicines.json';
 
-    // Load existing orders data
+    
     $ordersData = json_decode(file_get_contents($orderFilePath), true);
-    // Load existing medicines data
+    
     $medicinesData = json_decode(file_get_contents($medicinesFilePath), true);
 
-    // تحديث حالة الطلب إلى "delivered" إذا كان الرقم صحيحًا
+    
     foreach ($ordersData as $token => &$userData) {
         $userOrders = &$userData['orders'];
         foreach ($userOrders as &$order) {
             if ($order['ordernumber'] === $orderNumber) {
-                // تحديث حالة الطلب
+                
                 $order['status'] = $state;
 
-                // تحديث الكمية المتاحة للأدوية في المستودع
+                
                 if($state=="received"){
                 foreach ($order['medicines'] as $medicine) {
                     $medicineId = $medicine['id'];
@@ -223,16 +223,16 @@ public function state(Request $request)
                     $medicinesData['categories'][$medicine['category']][$key]['quantity_available'] -= $quantityOrdered;}}}
                 }
             }
-                // حفظ التغييرات إلى ملف JSON لكل من الطلبات والأدوية
+               
                 file_put_contents($orderFilePath, json_encode($ordersData, JSON_PRETTY_PRINT));
                 file_put_contents($medicinesFilePath, json_encode($medicinesData, JSON_PRETTY_PRINT));
 
-                return response()->json(['message' => 'تم تحديث حالة الطلب والمستودع بنجاح']);
+                return response()->json(['message' => 'updated succecfully']);
             }
         }
     }
-    return response()->json(['error' => 'رقم الطلب غير صحيح']);}}
-    return response()->json(['error' => 'التسجيل مطلوب']);
+    return response()->json(['error' => 'order number is not correct']);}}
+    return response()->json(['error' => 'registeration is required']);
 }
 
 }

@@ -195,15 +195,15 @@ class Pharmacy extends Controller
                 $cartpath = 'C:\xampp\htdocs\laravel\jsons\Cart.json';
         $cartcontent = file_get_contents($cartpath);
         $cart = json_decode($cartcontent, true);
-                // تحقق من وجود سلة للمستخدم، وإنشاءها إذا لم تكن موجودة
+         
                 if (!isset($cart['carts'][$token])) {
                     $cart['carts'][$token] = [];
                 }
 
-                // إضافة الدواء إلى سلة المستخدم
+          
                 $cart['carts'][$token][] = $cartItem;
 
-                // حفظ التغييرات إلى ملف JSON
+         
                 file_put_contents($cartpath, json_encode($cart, JSON_PRETTY_PRINT));
                 
                 return response()->json(['message' => 'added succecfully']);
@@ -245,29 +245,29 @@ public function order(Request $request)
         $orderItem = [
             'ordernumber' => uniqid(),
             'username' => $username,
-            'status' => 'in preparation',
+            'status' => 'preparing',
             'total_price' => $totalPrice,
             'total_quantity' => $totalQuantity,
             'paid' => "Not Paid",
             'medicines' => $medicines,
         ];
 
-        // Load existing orders data
+    
         $ordersData = json_decode(file_get_contents($orderFilePath), true);
 
-        // Create a new order for the token or update existing orders
+       
         if (!isset($ordersData[$token])) {
             $ordersData[$token] = ['orders' => []];
         }
 
         $ordersData[$token]['orders'][] = $orderItem;
 
-        // Save updated orders data
+       
         file_put_contents($orderFilePath, json_encode($ordersData, JSON_PRETTY_PRINT));
         
         unset($cartData['carts'][$token]);
 
-        // Save updated cart data
+       
         file_put_contents($jsonFilePath, json_encode($cartData, JSON_PRETTY_PRINT));
 
         return response()->json(['message' => "added succecfully"]);
@@ -284,5 +284,78 @@ public function getOrders($token)
     $jsoncontent = json_decode($filecontent, true);
     $orders = $jsoncontent[$token]['orders'] ?? [];
     return response()->json( $orders);
+}
+public function addFavorite(Request $request)
+{
+    $jsonFile = 'C:\xampp\htdocs\laravel\jsons\Favorites.json';
+    $content = file_get_contents($jsonFile);
+    $favoritesData = json_decode($content, true);
+
+    $token = $request->input('token');
+    $medicineId = $request->input('id');
+
+  
+    if (!isset($favoritesData[$token])) {
+        $favoritesData[$token] = [];
+    }
+
+
+    if (!in_array($medicineId, $favoritesData[$token])) {
+ 
+        $favoritesData[$token][] = $medicineId;
+
+        $message = "added succecfully";
+    } else {
+        
+        $favoritesData[$token] = array_diff($favoritesData[$token], [$medicineId]);
+
+        $message = "deleted succecfully";
+    }
+
+    // حفظ التغييرات في ملف JSON
+    file_put_contents($jsonFile, json_encode($favoritesData, JSON_PRETTY_PRINT));
+
+    return response()->json(['message' => $message]);
+}
+public function getAllFavorites($token)
+{
+    $jsonFile = 'C:\xampp\htdocs\laravel\jsons\Favorites.json';
+    $content = file_get_contents($jsonFile);
+    $favoritesData = json_decode($content, true);
+
+   
+
+  
+    if (isset($favoritesData[$token])) {
+        $favoriteIds = $favoritesData[$token];
+
+      
+        $medicinesData = json_decode(file_get_contents('C:\xampp\htdocs\laravel\jsons\Medicines.json'), true);
+
+        $favoriteMedicines = [];
+
+        
+        foreach ($favoriteIds as $medicineId) {
+            foreach ($medicinesData['categories'] as $category => $medicines) {
+                foreach ($medicines as $medicine) {
+                    if ($medicine['id'] == $medicineId) {
+                        $favoriteMedicines[] = $medicine;
+                    }
+                }
+            }
+        }
+
+        return response()->json($favoriteMedicines);
+    } else {
+        return response()->json([]);
+    }
+}
+public function getfavorite($token)
+{
+    $filepath = 'C:\xampp\htdocs\laravel\jsons\Favorites.json'; 
+    $filecontent = file_get_contents($filepath);
+    $jsoncontent = json_decode($filecontent, true);
+    $ids = $jsoncontent[$token] ?? [];
+    return response()->json($ids);
 }
 }

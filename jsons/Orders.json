@@ -94,6 +94,140 @@
                         "expiry_date": "2024-02-10"
                     }
                 ]
+            },
+            {
+                "ordernumber": "658736d46cfa1",
+                "username": "ahmad",
+                "status": "in preparation",
+                "total_price": 10.99,
+                "total_quantity": 1,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "47",
+                        "category": "Antihistamine",
+                        "scientific_name": "Levocetirizine",
+                        "trade_name": "Xyzal",
+                        "quantity_available": "1",
+                        "manufacturer": "Relief Pharmaceuticals",
+                        "price": 10.99,
+                        "expiry_date": "2024-05-25"
+                    }
+                ]
+            },
+            {
+                "ordernumber": "65873820c0786",
+                "username": "ahmad",
+                "status": "received",
+                "total_price": 29.67,
+                "total_quantity": 56,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "45",
+                        "category": "Antihistamine",
+                        "scientific_name": "Desloratadine",
+                        "trade_name": "Clarinex",
+                        "quantity_available": "17",
+                        "manufacturer": "Wellness Pharma",
+                        "price": 9.89,
+                        "expiry_date": "2024-04-20"
+                    },
+                    {
+                        "id": "45",
+                        "category": "Antihistamine",
+                        "scientific_name": "Desloratadine",
+                        "trade_name": "Clarinex",
+                        "quantity_available": "13",
+                        "manufacturer": "Wellness Pharma",
+                        "price": 9.89,
+                        "expiry_date": "2024-04-20"
+                    },
+                    {
+                        "id": "45",
+                        "category": "Antihistamine",
+                        "scientific_name": "Desloratadine",
+                        "trade_name": "Clarinex",
+                        "quantity_available": "26",
+                        "manufacturer": "Wellness Pharma",
+                        "price": 9.89,
+                        "expiry_date": "2024-04-20"
+                    }
+                ]
+            },
+            {
+                "ordernumber": "6588280aa948a",
+                "username": "ahmad",
+                "status": "in preparation",
+                "total_price": 5.99,
+                "total_quantity": 4,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "1",
+                        "category": "Analgesic",
+                        "scientific_name": "Paracetamol",
+                        "trade_name": "Panadol",
+                        "quantity_available": "4",
+                        "manufacturer": "ABC Pharmaceuticals",
+                        "price": 5.99,
+                        "expiry_date": "2023-12-31"
+                    }
+                ]
+            },
+            {
+                "ordernumber": "658845fe6eca8",
+                "username": "ahmad",
+                "status": "preparing",
+                "total_price": 31.58,
+                "total_quantity": 2,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "50",
+                        "category": "Antihistamine",
+                        "scientific_name": "Olopatadine",
+                        "trade_name": "Patanol",
+                        "quantity_available": "1",
+                        "manufacturer": "Pain Solutions",
+                        "price": 15.79,
+                        "expiry_date": "2023-09-15"
+                    },
+                    {
+                        "id": "50",
+                        "category": "Antihistamine",
+                        "scientific_name": "Olopatadine",
+                        "trade_name": "Patanol",
+                        "quantity_available": "1",
+                        "manufacturer": "Pain Solutions",
+                        "price": 15.79,
+                        "expiry_date": "2023-09-15"
+                    }
+                ]
+            }
+        ]
+    },
+    "4FfC18RcpBTj3JeamGSOs5Xfq7R4s2uKN3mz3bOgIrOIswzrrI4tPDjctmVf": {
+        "orders": [
+            {
+                "ordernumber": "65894fcd45488",
+                "username": "molham",
+                "status": "preparing",
+                "total_price": 6.49,
+                "total_quantity": 3,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "3",
+                        "category": "Analgesic",
+                        "scientific_name": "Acetaminophen",
+                        "trade_name": "Tylenol",
+                        "quantity_available": "3",
+                        "manufacturer": "MediPharma",
+                        "price": 6.49,
+                        "expiry_date": "2024-01-15"
+                    }
+                ]
             }
         ]
     }
