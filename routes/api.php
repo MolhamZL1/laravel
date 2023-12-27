@@ -27,6 +27,7 @@ Route::get('/medicines/{category}' , [Pharmacy::class ,'getMedicinesByCategory']
 Route::get('/searchByCategory/{category}' , [Pharmacy::class , 'searchByCategory']); 
 Route::get('/searchMedicine/{searchTerm}' , [Pharmacy::class , 'searchMedicine']); 
 Route::post('/addToCart' , [Pharmacy::class , 'addToCart']);//id,quantity,token
+Route::post('/removeFromCart' , [Pharmacy::class , 'removeFromCart']);//id,token
 Route::get('/cart/{token}' , [Pharmacy::class , 'getCart']);//quary token
 Route::post('/addorder' , [Pharmacy::class , 'order']);//token,username
 Route::get('/orders/{token}' , [Pharmacy::class , 'getOrders']);//quary token
