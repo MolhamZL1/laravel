@@ -341,8 +341,7 @@ class Pharmacy extends Controller
 
             $message = "deleted succecfully";
         }
-
-        // حفظ التغييرات في ملف JSON
+        
         file_put_contents($jsonFile, json_encode($favoritesData, JSON_PRETTY_PRINT));
 
         return response()->json(['message' => $message]);
