@@ -34,6 +34,7 @@ Route::get('/orders/{token}' , [Pharmacy::class , 'getOrders']);//quary token
 Route::post('/addfavorite' , [Pharmacy::class , 'addFavorite']);//token,id
 Route::get('/allfavorite/{token}' , [Pharmacy::class , 'getAllFavorites']);//quary token
 Route::get('/favorite/{token}' , [Pharmacy::class , 'getfavorite']);//quary token
+
 // Route repos Owner
 Route::post('/loginAdmin' , [repo::class , 'loginAdmin']);
 Route::post('/registerAdmin' , [repo::class , 'registerAdmin']); 
@@ -41,3 +42,4 @@ Route::post('/addMedicine' , [repo::class , 'addMedicine']); //token and medecin
 Route::get('/allOrders' , [repo::class , 'getAllOrders']); 
 Route::post('/paidState' , [repo::class , 'Paidstate']); //token,ordernumber,state : paid or not pait
 Route::post('/state' , [repo::class , 'state']); //token,ordernumber,state : sent or delivered
+Route::get('/repo/{endDate}' , [repo::class , 'generateReport']);//quary endDate

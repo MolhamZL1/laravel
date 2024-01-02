@@ -263,6 +263,7 @@ class Pharmacy extends Controller
 
         $token = $request->input('token');
         $username = $request->input('username');
+        $date = $request->input('date');
 
         if (isset($cartData['carts'][$token])) {
             $medicines = $cartData['carts'][$token];
@@ -280,6 +281,7 @@ class Pharmacy extends Controller
                 'total_quantity' => $totalQuantity,
                 'paid' => "Not Paid",
                 'medicines' => $medicines,
+                "date"=>$date
             ];
 
 
@@ -315,6 +317,8 @@ class Pharmacy extends Controller
         $orders = $jsoncontent[$token]['orders'] ?? [];
         return response()->json($orders);
     }
+
+  
     public function addFavorite(Request $request)
     {
         $jsonFile = 'C:\xampp\htdocs\laravel\jsons\Favorites.json';
@@ -352,13 +356,8 @@ class Pharmacy extends Controller
         $content = file_get_contents($jsonFile);
         $favoritesData = json_decode($content, true);
 
-
-
-
         if (isset($favoritesData[$token])) {
             $favoriteIds = $favoritesData[$token];
-
-
             $medicinesData = json_decode(file_get_contents('C:\xampp\htdocs\laravel\jsons\Medicines.json'), true);
 
             $favoriteMedicines = [];
