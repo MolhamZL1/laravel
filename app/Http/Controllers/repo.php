@@ -74,17 +74,18 @@ class repo extends Controller
                     return response()->json([
                         'message' => 'Login successful',
                         'token' => $item['token'],
+                        'username' => $item['username'],
                     ]);
                 else
                     return response()->json([
                         'message' => 'password is incorrect'
                     ], 401);
-            } else
-                return response()->json([
-                    'message' => 'phone number is incorrect'
-                ], 401);
-
+            }
         }
+
+        return response()->json([
+            'message' => 'phone number is not exist'
+        ], 401);
     }
     public function addMedicine(Request $request)
     {
