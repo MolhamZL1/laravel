@@ -1,7 +1,6 @@
 {
     "LiVx3yX0Itfq6efrAg8IyXdNvkvFEXABgWs30dfhr0PxRo8bBBaqMZku1dDZ": {
         "orders": [
-      
             {
                 "ordernumber": "6594004ef2643",
                 "username": "molham",
@@ -22,8 +21,214 @@
                     }
                 ],
                 "date": "2024-01-02 15:23:36.893820"
+            },
+            {
+                "ordernumber": "65946b290a417",
+                "username": "molham",
+                "status": "preparing",
+                "total_price": 45.97,
+                "total_quantity": 11,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "12",
+                        "category": "Anti-inflammatory",
+                        "scientific_name": "Celecoxib",
+                        "trade_name": "Celebrex",
+                        "quantity_available": "5",
+                        "manufacturer": "Relief Pharmaceuticals",
+                        "price": 16.99,
+                        "expiry_date": "2025-01-25"
+                    },
+                    {
+                        "id": "12",
+                        "category": "Anti-inflammatory",
+                        "scientific_name": "Celecoxib",
+                        "trade_name": "Celebrex",
+                        "quantity_available": "3",
+                        "manufacturer": "Relief Pharmaceuticals",
+                        "price": 16.99,
+                        "expiry_date": "2025-01-25"
+                    },
+                    {
+                        "id": "15",
+                        "category": "Anti-inflammatory",
+                        "scientific_name": "Etodolac",
+                        "trade_name": "Lodine",
+                        "quantity_available": "3",
+                        "manufacturer": "Care Pharmaceuticals",
+                        "price": 11.99,
+                        "expiry_date": "2025-03-05"
+                    }
+                ],
+                "date": "2024-01-02 22:59:36.790"
+            },
+            {
+                "ordernumber": "65946b4237359",
+                "username": "molham",
+                "status": "preparing",
+                "total_price": 13.29,
+                "total_quantity": 5,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "13",
+                        "category": "Anti-inflammatory",
+                        "scientific_name": "Indomethacin",
+                        "trade_name": "Indocin",
+                        "quantity_available": "5",
+                        "manufacturer": "Pharma Solutions",
+                        "price": 13.29,
+                        "expiry_date": "2025-12-10"
+                    }
+                ],
+                "date": "2024-01-02 23:00:01.989"
+            },
+            {
+                "ordernumber": "65946b582b419",
+                "username": "molham",
+                "status": "preparing",
+                "total_price": 19.98,
+                "total_quantity": 16,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "34",
+                        "category": "Antipyretic",
+                        "scientific_name": "Naproxen",
+                        "trade_name": "Aleve",
+                        "quantity_available": "9",
+                        "manufacturer": "MediTech",
+                        "price": 9.99,
+                        "expiry_date": "2025-10-31"
+                    },
+                    {
+                        "id": "34",
+                        "category": "Antipyretic",
+                        "scientific_name": "Naproxen",
+                        "trade_name": "Aleve",
+                        "quantity_available": "7",
+                        "manufacturer": "MediTech",
+                        "price": 9.99,
+                        "expiry_date": "2025-10-31"
+                    }
+                ],
+                "date": "2024-01-02 23:00:23.940"
+            },
+            {
+                "ordernumber": "65946b69100f4",
+                "username": "molham",
+                "status": "preparing",
+                "total_price": 11.98,
+                "total_quantity": 13,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "35",
+                        "category": "Antipyretic",
+                        "scientific_name": "Paracetamol",
+                        "trade_name": "Panadol",
+                        "quantity_available": "9",
+                        "manufacturer": "ABC Pharmaceuticals",
+                        "price": 5.99,
+                        "expiry_date": "2025-12-31"
+                    },
+                    {
+                        "id": "35",
+                        "category": "Antipyretic",
+                        "scientific_name": "Paracetamol",
+                        "trade_name": "Panadol",
+                        "quantity_available": "4",
+                        "manufacturer": "ABC Pharmaceuticals",
+                        "price": 5.99,
+                        "expiry_date": "2025-12-31"
+                    }
+                ],
+                "date": "2024-01-02 23:00:40.833"
+            },
+            {
+                "ordernumber": "65946bc11a98c",
+                "username": "molham",
+                "status": "preparing",
+                "total_price": 11.98,
+                "total_quantity": 9,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "1",
+                        "category": "Analgesic",
+                        "scientific_name": "Paracetamol",
+                        "trade_name": "Panadol",
+                        "quantity_available": "7",
+                        "manufacturer": "ABC Pharmaceuticals",
+                        "price": 5.99,
+                        "expiry_date": "2025-12-31"
+                    },
+                    {
+                        "id": "1",
+                        "category": "Analgesic",
+                        "scientific_name": "Paracetamol",
+                        "trade_name": "Panadol",
+                        "quantity_available": "2",
+                        "manufacturer": "ABC Pharmaceuticals",
+                        "price": 5.99,
+                        "expiry_date": "2025-12-31"
+                    }
+                ],
+                "date": "2024-01-02 23:02:08.851"
+            },
+            {
+                "ordernumber": "65946be6ac64f",
+                "username": "molham",
+                "status": "preparing",
+                "total_price": 31.98,
+                "total_quantity": 7,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "7",
+                        "category": "Analgesic",
+                        "scientific_name": "Morphine",
+                        "trade_name": "MS Contin",
+                        "quantity_available": "4",
+                        "manufacturer": "Pain Relief Inc.",
+                        "price": 15.99,
+                        "expiry_date": "2025-05-05"
+                    },
+                    {
+                        "id": "7",
+                        "category": "Analgesic",
+                        "scientific_name": "Morphine",
+                        "trade_name": "MS Contin",
+                        "quantity_available": "3",
+                        "manufacturer": "Pain Relief Inc.",
+                        "price": 15.99,
+                        "expiry_date": "2025-05-05"
+                    }
+                ],
+                "date": "2024-01-02 23:02:46.474"
+            },
+            {
+                "ordernumber": "65946bf65521a",
+                "username": "molham",
+                "status": "preparing",
+                "total_price": 8.79,
+                "total_quantity": 4,
+                "paid": "Not Paid",
+                "medicines": [
+                    {
+                        "id": "6",
+                        "category": "Analgesic",
+                        "scientific_name": "Diclofenac",
+                        "trade_name": "Voltaren",
+                        "quantity_available": "4",
+                        "manufacturer": "Global Pharma",
+                        "price": 8.79,
+                        "expiry_date": "2025-03-20"
+                    }
+                ],
+                "date": "2024-01-02 23:03:02.104"
             }
         ]
     }
-   
 }
